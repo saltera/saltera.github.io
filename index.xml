@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Public Notes</title>
+    <link>https://alexsalter.net/</link>
+    <description>Recent content on Public Notes</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-gb</language>
+    <lastBuildDate>Fri, 25 Dec 2020 19:34:37 +0000</lastBuildDate><atom:link href="https://alexsalter.net/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>XPS 15 9560</title>
+      <link>https://alexsalter.net/notes/debian/xps-15-9560/</link>
+      <pubDate>Fri, 25 Dec 2020 19:34:37 +0000</pubDate>
+      
+      <guid>https://alexsalter.net/notes/debian/xps-15-9560/</guid>
+      <description>Dell XPS-9560 Installation issue Add the non-free firmware-iwlwifi_*_all.deb from https://cdimage.debian.org/cdimage/unofficial/non-free/firmware/ to the installation media /firmware
+ACPI issue There is currently a bug that means that some kernels (particularly newer ones) will detect the wrong ACPI revision.
+Add acpi_rev_override=5 to /etc/default/grub
+GRUB_CMDLINE_LINUX=&amp;#34;acpi_rev_override=5 quiet&amp;#34; Update grub
+update-grub Reference    Name Link     Debian XPS 15 9560 https://wiki.debian.org/InstallingDebianOn/Dell/Dell_XPS_15_9560    </description>
+    </item>
+    
+  </channel>
+</rss>

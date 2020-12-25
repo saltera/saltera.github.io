@@ -1,16 +1,14 @@
 <!DOCTYPE html>
 <html><head>
-	<meta name="generator" content="Hugo 0.80.0-DEV" />
 
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
-    <link rel="alternate" type="application/rss+xml" href="https://alexsalter.net/index.xml" title="Public Notes" />
-    <link rel="canonical" href="https://alexsalter.net/">
+    <link rel="canonical" href="https://alexsalter.net/notes/debian/xps-15-9560/">
 
     <title>
         
-        Public Notes
+        XPS 15 9560 | Public Notes
         
     </title>
 
@@ -38,9 +36,6 @@
         </div>
         
     </div>
-    <div class="feed-icons">
-            <a href=".Permalink"><img src="/img/feed-icon.svg" alt="RSS feed" /></a>
-        </div>
     </nav>
 <div class="container-fluid">
             <div class="row">
@@ -55,12 +50,12 @@
                 <input class="form-control mr-sm-2 w-100" data-search-input id="search-by" type="text" placeholder="Search">
             </form>
          <ul class="navbar-nav flex-column pt-3">
-    <li data-nav-id="/notes/" class="nav-item my-1 haschildren
+    <li data-nav-id="/notes/" class="nav-item my-1 parent haschildren
         ">
         
         <a class="nav-link p-0" href="/notes/"><h6>Notes</h6></a>
         <ul class="list-unstyled ml-2">
-        <li data-nav-id="/notes/debian/xps-15-9560/" class="nav-item my-1">
+        <li data-nav-id="/notes/debian/xps-15-9560/" class="nav-item my-1 active">
                 
                  <a href="/notes/debian/xps-15-9560/" class="nav-link p-0">
                     XPS 15 9560
@@ -75,22 +70,46 @@
 
 </div>
                 <div class="docs-toc large order-lg-2 order-md-0 order-xs-1 col-12 col-lg-2 col-xl-2 position-sticky border-left"><div class="docs-toc">
-	
+	<nav id="TableOfContents">
+  <ul>
+    <li><a href="#installation-issue">Installation issue</a></li>
+    <li><a href="#acpi-issue">ACPI issue</a></li>
+  </ul>
+</nav>
 </div>
 </div>
                 <div class="main col-12 order-1 col-md-9 col-lg-10 col-xl-8 py-3">
                 
-	
-			<h1>Customize your own home page</h1>
-			<p>
-			  The site is working. Don't forget to customize this homepage with your own. You typically have 2 choices :
-			</p>
-			<ul>
-			  <li><b>1. </b> Create an _index.md document in the content folder</li>
-			  <li><b>2. </b> Configure your server to automatically redirect this home page to one of your documentation pages</li>
-			</ul>
-		<p><i class="fa fa-heart fa-4x"></i></p>
-	
+
+<h1>XPS 15 9560</h1>
+
+<h1 id="dell-xps-9560">Dell XPS-9560</h1>
+<h2 id="installation-issue">Installation issue</h2>
+<p>Add the non-free <code>firmware-iwlwifi_*_all.deb</code> from <a href="https://cdimage.debian.org/cdimage/unofficial/non-free/firmware/">https://cdimage.debian.org/cdimage/unofficial/non-free/firmware/</a> to the installation media <code>/firmware</code></p>
+<h2 id="acpi-issue">ACPI issue</h2>
+<p>There is currently a bug that means that some kernels (particularly newer ones) will detect the wrong ACPI revision.</p>
+<p>Add <code>acpi_rev_override=5</code> to <code>/etc/default/grub</code></p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-ini" data-lang="ini"><span style="color:#a6e22e">GRUB_CMDLINE_LINUX</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;acpi_rev_override=5 quiet&#34;</span>
+</code></pre></div><p>Update grub</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sh" data-lang="sh">update-grub
+</code></pre></div><h1 id="reference">Reference</h1>
+<table>
+<thead>
+<tr>
+<th>Name</th>
+<th>Link</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Debian XPS 15 9560</td>
+<td><a href="https://wiki.debian.org/InstallingDebianOn/Dell/Dell_XPS_15_9560">https://wiki.debian.org/InstallingDebianOn/Dell/Dell_XPS_15_9560</a></td>
+</tr>
+</tbody>
+</table>
+
+
+    
 
 
                     
@@ -99,7 +118,8 @@
 
     <h4 class="text-white text-center">Read more</h4>
 
-    <div class="d-flex justify-content-center"><a class="p-1 ml-3 d-inline-block text-white text-right" href="/notes/" title="Notes">Notes<i class="fas fa-chevron-right p-1"></i></a>
+    <div class="d-flex justify-content-center"><a class="p-1 mr-3 d-inline-block text-white" href="/notes/" title="Notes"><i class="fas fa-chevron-left p-1"></i>Notes</a>
+        
     </div>
 </div>
 
