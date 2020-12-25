@@ -1,12 +1,12 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>Home on alexsalter.net</title>
-    <link>https://alexsalter.net/</link>
-    <description>Recent content in Home on alexsalter.net</description>
+    <title>Debian on alexsalter.net</title>
+    <link>https://alexsalter.net/note/debian/</link>
+    <description>Recent content in Debian on alexsalter.net</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-gb</language>
-    <lastBuildDate>Fri, 25 Dec 2020 21:21:23 +0000</lastBuildDate><atom:link href="https://alexsalter.net/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Fri, 25 Dec 2020 22:14:30 +0000</lastBuildDate><atom:link href="https://alexsalter.net/note/debian/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Packages</title>
       <link>https://alexsalter.net/note/debian/packages/</link>
