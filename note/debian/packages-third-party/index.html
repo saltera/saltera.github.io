@@ -426,9 +426,17 @@ apt-get update
 apt-get install -y dotnet-sdk-3.1
 
 apt-get install -y dotnet-sdk-5.0
+</code></pre></div><div class="gdoc-page__anchorwrap"><h2 id="terraform">Terraform<a data-clipboard-text="https://alexsalter.net/note/debian/packages-third-party/#terraform" class="gdoc-page__anchor gdoc-page__anchor--right clip" aria-label="Anchor Terraform" href="#terraform"><svg class="icon link"><use xlink:href="#link"></use></svg></a></h2></div>
+<div class="highlight"><pre class="chroma"><code class="language-sh" data-lang="sh">curl -fsSL https://apt.releases.hashicorp.com/gpg <span class="se">\
+</span><span class="se"></span>  <span class="p">|</span> sudo apt-key add -
+
+sudo apt-add-repository <span class="s2">&#34;deb [arch=</span><span class="k">$(</span>dpkg --print-architecture<span class="k">)</span><span class="s2">] https://apt.releases.hashicorp.com </span><span class="k">$(</span>lsb_release -cs<span class="k">)</span><span class="s2"> main&#34;</span>
+
+apt update
+
+apt install terraform
 </code></pre></div><div class="gdoc-page__anchorwrap"><h2 id="visual-code">Visual Code<a data-clipboard-text="https://alexsalter.net/note/debian/packages-third-party/#visual-code" class="gdoc-page__anchor gdoc-page__anchor--right clip" aria-label="Anchor Visual Code" href="#visual-code"><svg class="icon link"><use xlink:href="#link"></use></svg></a></h2></div>
-<div class="highlight"><pre class="chroma"><code class="language-sh" data-lang="sh">apt update
-curl -sSL https://packages.microsoft.com/keys/microsoft.asc <span class="se">\
+<div class="highlight"><pre class="chroma"><code class="language-sh" data-lang="sh">curl -sSL https://packages.microsoft.com/keys/microsoft.asc <span class="se">\
 </span><span class="se"></span>  <span class="p">|</span> apt-key add -
 
 add-apt-repository <span class="s2">&#34;deb [arch=amd64] https://packages.microsoft.com/repos/vscode stable main&#34;</span>
@@ -484,7 +492,7 @@ apt install code
 
 
 
-<script defer src="/js/en.search.min.6eb6f2106b7e25d9db3a06492c8c114f0c79b761179050889bb14e681d2c8f5d.js"></script>
+<script defer src="/js/en.search.min.195ff049155e2e9f1c5ce8a47214ba10b868663d4f5ae69d2ba9a0e8d689e88e.js"></script>
 
 
 
