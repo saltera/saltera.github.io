@@ -43,12 +43,12 @@ sed \  -i &amp;#39;s/; default-sample-rate = 44100/default-sample-rate = 48000/g
       <pubDate>Fri, 25 Dec 2020 19:34:37 +0000</pubDate>
       
       <guid>https://alexsalter.net/note/debian/dell-xps-15-9560/</guid>
-      <description>Installer missing non-free wifi firmware #  The Intel 8265/8275 requires non-free firmware whoever this can be added to the installation media.
+      <description>Installer missing non-free wifi firmware The Intel 8265/8275 requires non-free firmware whoever this can be added to the installation media.
 Copy the non-free firmware-iwlwifi_*_all.deb from https://cdimage.debian.org/cdimage/unofficial/non-free/firmware/ to firmware folder of the installation media.
-ACPI issue #  There is currently a bug that means that some kernels (particularly newer ones) will detect the wrong ACPI revision.
+ACPI issue There is currently a bug that means that some kernels (particularly newer ones) will detect the wrong ACPI revision.
 Add acpi_rev_override=5 to /etc/default/grub
 GRUB_CMDLINE_LINUX=&amp;#34;acpi_rev_override=5 quiet&amp;#34; Update grub
-update-grub Reference #     Name Link     Debian XPS 15 9560 https://wiki.</description>
+update-grub Reference    Name Link     Debian XPS 15 9560 https://wiki.</description>
     </item>
     
   </channel>
