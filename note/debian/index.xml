@@ -13,7 +13,8 @@
       <pubDate>Sat, 26 Dec 2020 14:41:00 +0000</pubDate>
       
       <guid>https://alexsalter.net/note/debian/packages-third-party/</guid>
-      <description>Pre-requisites apt update apt install apt-transport-https \  ca-certificates \  curl \  gnupg \  gnupg2 \  lsb-release \  software-properties-common Azure CLI curl -sL https://packages.microsoft.com/keys/microsoft.asc \  | gpg --dearmor \  | tee /etc/apt/trusted.gpg.d/microsoft.gpg &amp;gt; /dev/null AZ_REPO=$(lsb_release -cs) echo &amp;#34;deb [arch=amd64] https://packages.microsoft.com/repos/azure-cli/ $AZ_REPOmain&amp;#34; \  | tee /etc/apt/sources.list.d/azure-cli.list apt update apt install azure-cli Docker curl -fsSL https://download.docker.com/linux/debian/gpg \  | apt-key add - add-apt-repository &amp;#34;deb [arch=amd64] https://download.</description>
+      <description>Azure CLI curl -sL https://packages.microsoft.com/keys/microsoft.asc \  | gpg --dearmor \  | tee /etc/apt/trusted.gpg.d/microsoft.gpg &amp;gt; /dev/null AZ_REPO=$(lsb_release -cs) echo &amp;#34;deb [arch=amd64] https://packages.microsoft.com/repos/azure-cli/ $AZ_REPOmain&amp;#34; \  | tee /etc/apt/sources.list.d/azure-cli.list apt update apt install azure-cli Docker curl -fsSL https://download.docker.com/linux/debian/gpg \  | apt-key add - add-apt-repository &amp;#34;deb [arch=amd64] https://download.docker.com/linux/debian $(lsb_release -cs)stable&amp;#34; apt update apt install docker-ce usermod -aG docker ${USER} su - ${USER} Disable zfs plugin in /etc/containerd/config.toml
+disabled_plugins = [&amp;quot;cri&amp;quot;, &amp;quot;zfs&amp;quot;] GitHub CLI apt-key adv --keyserver keyserver.</description>
     </item>
     
     <item>
@@ -54,7 +55,7 @@ sed \  -i &amp;#39;s/; default-sample-rate = 44100/default-sample-rate = 48000/g
       <pubDate>Fri, 25 Dec 2020 22:44:12 +0000</pubDate>
       
       <guid>https://alexsalter.net/note/debian/packages/</guid>
-      <description>Main    Name Description     bridge-utils Utilities for configuring the Linux Ethernet bridge   dnsutils Clients provided with BIND   gimp    git    htop interactive processes viewer   inkscape    hwinfo Hardware identification system   openssh-server    pavucontrol    tree displays an indented directory tree, in color    apt update apt install \  bridge-utils \  dnsutils \  gimp \  git \  htop \  inkscape \  hwinfo \  openssh-server \  pavucontrol \  tree Restricted apt install \  gstreamer1.</description>
+      <description>Main    Name Description     bridge-utils Utilities for configuring the Linux Ethernet bridge   dnsutils Clients provided with BIND   gimp    git    htop interactive processes viewer   inkscape    hwinfo Hardware identification system   openssh-server    pavucontrol    tree displays an indented directory tree, in color    apt update apt install \  apt-transport-https \  bridge-utils \  ca-certificates \  curl \  dnsutils \  gimp \  git \  gnupg \  gnupg2 \  htop \  hwinfo \  inkscape \  lsb-release \  openssh-server \  pavucontrol \  software-properties-common \  tree Restricted apt install \  gstreamer1.</description>
     </item>
     
     <item>
