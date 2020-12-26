@@ -2,12 +2,11 @@
 <html lang="en">
 
 <head>
-	<meta name="generator" content="Hugo 0.80.0-DEV" />
     <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<meta name="description" content="Home">
+<meta name="description" content="Packages (third party)">
 
-<title>Home | </title>
+<title>Packages (third party) | </title>
 
 <link rel="icon" href="/favicon/favicon-32x32.png" type="image/x-icon">
 
@@ -32,7 +31,6 @@
 <link rel="preload" href="/custom.css" as="style">
 <link rel="stylesheet" href="/custom.css" media="all">
 
-<link rel="alternate" type="application/rss+xml" href="https://alexsalter.net/index.xml" title="" />
 <!-- Made with Geekdoc theme https://github.com/thegeeklab/hugo-geekdoc -->
 
 </head>
@@ -255,7 +253,7 @@
             
             
                 <span class="flex">
-                    <a href="/note/debian/packages-third-party/" class="gdoc-nav__entry ">
+                    <a href="/note/debian/packages-third-party/" class="gdoc-nav__entry is-active">
                         Packages (third party)
                     </a>
                 </span>
@@ -318,7 +316,28 @@
             
     
     
-        Home
+        
+        
+        
+    
+    
+        
+        
+        
+    
+    
+        
+        
+        
+    
+    
+        <a href='/'>Home</a> / <a href='/note/'>Notes</a> / <a href='/note/debian/'>Debian</a> / Packages (third party)
+    
+
+    
+
+    
+
     
 
         </span>
@@ -328,7 +347,7 @@
         
         <span class="editpage">
             <svg class="icon code"><use xlink:href="#code"></use></svg>
-            <a href="https://github.com/saltera/alexsalter.net/edit/master/exampleSite/content/_index.md">
+            <a href="https://github.com/saltera/alexsalter.net/edit/master/exampleSite/content/note/debian/packages-third-party.md">
                 Edit this page
             </a>
         </span>
@@ -336,8 +355,9 @@
     </span>
 </div>
 
+
     <article class="gdoc-markdown">
-        <h1>Home</h1>
+        <h1>Packages (third party)</h1>
         
 
 
@@ -345,8 +365,96 @@
     
 
 
-<p>Welcome to alexsalter.net&hellip; are you lost?</p>
+<div class="gdoc-page__anchorwrap"><h2 id="pre-requisites">Pre-requisites<a data-clipboard-text="https://alexsalter.net/note/debian/packages-third-party/#pre-requisites" class="gdoc-page__anchor gdoc-page__anchor--right clip" aria-label="Anchor Pre-requisites" href="#pre-requisites"><svg class="icon link"><use xlink:href="#link"></use></svg></a></h2></div>
+<div class="highlight"><pre class="chroma"><code class="language-sh" data-lang="sh">apt update
 
+apt install 
+  apt-transport-https <span class="se">\
+</span><span class="se"></span>  ca-certificates <span class="se">\
+</span><span class="se"></span>  curl <span class="se">\
+</span><span class="se"></span>  gnupg <span class="se">\
+</span><span class="se"></span>  gnupg2 <span class="se">\
+</span><span class="se"></span>  lsb-release <span class="se">\
+</span><span class="se"></span>  software-properties-common
+</code></pre></div><div class="gdoc-page__anchorwrap"><h2 id="azure-cli">Azure CLI<a data-clipboard-text="https://alexsalter.net/note/debian/packages-third-party/#azure-cli" class="gdoc-page__anchor gdoc-page__anchor--right clip" aria-label="Anchor Azure CLI" href="#azure-cli"><svg class="icon link"><use xlink:href="#link"></use></svg></a></h2></div>
+<div class="highlight"><pre class="chroma"><code class="language-sh" data-lang="sh">curl -sL https://packages.microsoft.com/keys/microsoft.asc <span class="se">\
+</span><span class="se"></span>  <span class="p">|</span> gpg --dearmor <span class="se">\
+</span><span class="se"></span>  <span class="p">|</span> tee /etc/apt/trusted.gpg.d/microsoft.gpg &gt; /dev/null
+
+<span class="nv">AZ_REPO</span><span class="o">=</span><span class="k">$(</span>lsb_release -cs<span class="k">)</span>
+<span class="nb">echo</span> <span class="s2">&#34;deb [arch=amd64] https://packages.microsoft.com/repos/azure-cli/ </span><span class="nv">$AZ_REPO</span><span class="s2"> main&#34;</span> <span class="se">\
+</span><span class="se"></span>  <span class="p">|</span> tee /etc/apt/sources.list.d/azure-cli.list
+
+apt update
+
+apt install azure-cli
+</code></pre></div><div class="gdoc-page__anchorwrap"><h2 id="docker">Docker<a data-clipboard-text="https://alexsalter.net/note/debian/packages-third-party/#docker" class="gdoc-page__anchor gdoc-page__anchor--right clip" aria-label="Anchor Docker" href="#docker"><svg class="icon link"><use xlink:href="#link"></use></svg></a></h2></div>
+<div class="highlight"><pre class="chroma"><code class="language-sh" data-lang="sh">curl -fsSL https://download.docker.com/linux/debian/gpg <span class="se">\
+</span><span class="se"></span>  <span class="p">|</span> apt-key add -
+
+add-apt-repository <span class="s2">&#34;deb [arch=amd64] https://download.docker.com/linux/debian </span><span class="k">$(</span>lsb_release -cs<span class="k">)</span><span class="s2"> stable&#34;</span>
+
+apt update
+
+apt install docker-ce
+
+usermod -aG docker <span class="si">${</span><span class="nv">USER</span><span class="si">}</span>
+su - <span class="si">${</span><span class="nv">USER</span><span class="si">}</span>
+</code></pre></div><p>Disable <code>zfs</code> plugin in <code>/etc/containerd/config.toml</code></p>
+<pre><code>disabled_plugins = [&quot;cri&quot;, &quot;zfs&quot;]
+</code></pre><div class="gdoc-page__anchorwrap"><h2 id="github-cli">GitHub CLI<a data-clipboard-text="https://alexsalter.net/note/debian/packages-third-party/#github-cli" class="gdoc-page__anchor gdoc-page__anchor--right clip" aria-label="Anchor GitHub CLI" href="#github-cli"><svg class="icon link"><use xlink:href="#link"></use></svg></a></h2></div>
+<div class="highlight"><pre class="chroma"><code class="language-sh" data-lang="sh">apt-key adv --keyserver keyserver.ubuntu.com --recv-key C99B11DEB97541F0
+
+apt-add-repository https://cli.github.com/packages
+
+apt update
+
+apt install gh
+</code></pre></div><div class="gdoc-page__anchorwrap"><h2 id="helm">Helm<a data-clipboard-text="https://alexsalter.net/note/debian/packages-third-party/#helm" class="gdoc-page__anchor gdoc-page__anchor--right clip" aria-label="Anchor Helm" href="#helm"><svg class="icon link"><use xlink:href="#link"></use></svg></a></h2></div>
+<pre><code>curl https://baltocdn.com/helm/signing.asc \
+  | apt-key add -
+
+echo &quot;deb https://baltocdn.com/helm/stable/debian/ all main&quot; \
+  | tee /etc/apt/sources.list.d/helm-stable-debian.list
+
+apt-get update
+
+apt-get install helm
+</code></pre><div class="gdoc-page__anchorwrap"><h2 id="kubectl">Kubectl<a data-clipboard-text="https://alexsalter.net/note/debian/packages-third-party/#kubectl" class="gdoc-page__anchor gdoc-page__anchor--right clip" aria-label="Anchor Kubectl" href="#kubectl"><svg class="icon link"><use xlink:href="#link"></use></svg></a></h2></div>
+<div class="highlight"><pre class="chroma"><code class="language-sh" data-lang="sh">curl -s https://packages.cloud.google.com/apt/doc/apt-key.gpg <span class="se">\
+</span><span class="se"></span>  <span class="p">|</span> apt-key add -
+
+<span class="nb">echo</span> <span class="s2">&#34;deb https://apt.kubernetes.io/ kubernetes-xenial main&#34;</span> <span class="se">\
+</span><span class="se"></span>  <span class="p">|</span> tee -a /etc/apt/sources.list.d/kubernetes.list
+
+
+apt-get update
+
+apt-get install kubectl
+</code></pre></div><div class="gdoc-page__anchorwrap"><h2 id="microsoft-net-sdk">Microsoft .NET SDK<a data-clipboard-text="https://alexsalter.net/note/debian/packages-third-party/#microsoft-net-sdk" class="gdoc-page__anchor gdoc-page__anchor--right clip" aria-label="Anchor Microsoft .NET SDK" href="#microsoft-net-sdk"><svg class="icon link"><use xlink:href="#link"></use></svg></a></h2></div>
+<div class="highlight"><pre class="chroma"><code class="language-sh" data-lang="sh">wget https://packages.microsoft.com/config/debian/10/packages-microsoft-prod.deb <span class="se">\
+</span><span class="se"></span>  -O packages-microsoft-prod.deb
+
+dpkg -i packages-microsoft-prod.deb
+
+rm packages-microsoft-prod.deb
+
+apt-get update
+
+apt-get install -y dotnet-sdk-3.1
+
+apt-get install -y dotnet-sdk-5.0
+</code></pre></div><div class="gdoc-page__anchorwrap"><h2 id="visual-code">Visual Code<a data-clipboard-text="https://alexsalter.net/note/debian/packages-third-party/#visual-code" class="gdoc-page__anchor gdoc-page__anchor--right clip" aria-label="Anchor Visual Code" href="#visual-code"><svg class="icon link"><use xlink:href="#link"></use></svg></a></h2></div>
+<div class="highlight"><pre class="chroma"><code class="language-sh" data-lang="sh">apt update
+curl -sSL https://packages.microsoft.com/keys/microsoft.asc <span class="se">\
+</span><span class="se"></span>  <span class="p">|</span> apt-key add -
+
+add-apt-repository <span class="s2">&#34;deb [arch=amd64] https://packages.microsoft.com/repos/vscode stable main&#34;</span>
+
+apt update
+
+apt install code
+</code></pre></div>
 
     </article>
 
