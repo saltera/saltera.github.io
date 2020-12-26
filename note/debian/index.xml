@@ -8,6 +8,26 @@
     <language>en-gb</language>
     <lastBuildDate>Fri, 25 Dec 2020 22:14:30 +0000</lastBuildDate><atom:link href="https://alexsalter.net/note/debian/index.xml" rel="self" type="application/rss+xml" />
     <item>
+      <title>Go</title>
+      <link>https://alexsalter.net/note/debian/go/</link>
+      <pubDate>Sat, 26 Dec 2020 17:42:34 +0000</pubDate>
+      
+      <guid>https://alexsalter.net/note/debian/go/</guid>
+      <description>version=&amp;#34;1.15.6&amp;#34; wget https://golang.org/dl/go${version}.linux-amd64.tar.gz -O go.tar.gz tar -xvf go.tar.gz sudo mv go /usr/local rm go.tar.gz mkdir -p ~/go/bin Add environment variables
+export GOROOT=/usr/local/go export GOPATH=~/go export PATH=$GOPATH/bin:$GOROOT/bin:$PATH </description>
+    </item>
+    
+    <item>
+      <title>zsh</title>
+      <link>https://alexsalter.net/note/debian/zsh/</link>
+      <pubDate>Sat, 26 Dec 2020 17:33:25 +0000</pubDate>
+      
+      <guid>https://alexsalter.net/note/debian/zsh/</guid>
+      <description>My theme Download https://github.com/saltera/my-zsh-theme/blob/master/my.zsh-theme to $ZSH/custom/themes/my.zsh-theme
+# vim:ft=zsh ts=2 sw=2 sts=2 # # My theme is a slightly customized agnoster - https://gist.github.com/3712874 # A Powerline-inspired theme for ZSH # # # README # # In order for this theme to render correctly, you will need a # [Powerline-patched font](https://github.com/Lokaltog/powerline-fonts). # Make sure you have a recent version: the code points that Powerline # uses changed in 2012, and older versions will display incorrectly, # in confusing ways.</description>
+    </item>
+    
+    <item>
       <title>Packages (third party)</title>
       <link>https://alexsalter.net/note/debian/packages-third-party/</link>
       <pubDate>Sat, 26 Dec 2020 14:41:00 +0000</pubDate>
