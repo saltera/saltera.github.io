@@ -8,6 +8,15 @@
     <language>en-gb</language>
     <lastBuildDate>Fri, 25 Dec 2020 22:14:30 +0000</lastBuildDate><atom:link href="https://alexsalter.net/note/debian/index.xml" rel="self" type="application/rss+xml" />
     <item>
+      <title>k9s</title>
+      <link>https://alexsalter.net/note/debian/k9s/</link>
+      <pubDate>Sat, 26 Dec 2020 21:26:40 +0000</pubDate>
+      
+      <guid>https://alexsalter.net/note/debian/k9s/</guid>
+      <description>version=&amp;#39;0.24.2&amp;#39; url=&amp;#34;https://github.com/derailed/k9s/releases/download/v${version}/k9s_Linux_x86_64.tar.gz&amp;#34; wget $url -O k9s.tar.gz tar -zxvf k9s.tar.gz k9s sudo mv k9s /usr/local/bin rm k9s.tar.gz </description>
+    </item>
+    
+    <item>
       <title>Go</title>
       <link>https://alexsalter.net/note/debian/go/</link>
       <pubDate>Sat, 26 Dec 2020 17:42:34 +0000</pubDate>

@@ -4,9 +4,9 @@
 <head>
     <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<meta name="description" content="Gnome extensions">
+<meta name="description" content="k9s">
 
-<title>Gnome extensions | </title>
+<title>k9s | </title>
 
 <link rel="icon" href="/favicon/favicon-32x32.png" type="image/x-icon">
 
@@ -207,7 +207,7 @@
             
             
                 <span class="flex">
-                    <a href="/note/debian/gnome-extensions/" class="gdoc-nav__entry is-active">
+                    <a href="/note/debian/gnome-extensions/" class="gdoc-nav__entry ">
                         Gnome extensions
                     </a>
                 </span>
@@ -253,7 +253,7 @@
             
             
                 <span class="flex">
-                    <a href="/note/debian/k9s/" class="gdoc-nav__entry ">
+                    <a href="/note/debian/k9s/" class="gdoc-nav__entry is-active">
                         k9s
                     </a>
                 </span>
@@ -400,7 +400,7 @@
         
     
     
-        <a href='/'>Home</a> / <a href='/note/'>Notes</a> / <a href='/note/debian/'>Debian</a> / Gnome extensions
+        <a href='/'>Home</a> / <a href='/note/'>Notes</a> / <a href='/note/debian/'>Debian</a> / k9s
     
 
     
@@ -419,7 +419,7 @@
 
 
     <article class="gdoc-markdown">
-        <h1>Gnome extensions</h1>
+        <h1>k9s</h1>
         
 
 
@@ -427,17 +427,18 @@
     
 
 
-<p>Install the <code>gnome-shell-extensions</code> package.</p>
-<div class="highlight"><pre class="chroma"><code class="language-sh" data-lang="sh">apt update
+<div class="highlight"><pre class="chroma"><code class="language-bash" data-lang="bash"><span class="nv">version</span><span class="o">=</span><span class="s1">&#39;0.24.2&#39;</span>
 
-apt install gnome-shell-extensions
-</code></pre></div><p>Activate packages on <a href="https://extensions.gnome.org">https://extensions.gnome.org</a></p>
-<ul>
-<li><a href="https://extensions.gnome.org/extension/118/no-topleft-hot-corner/">No top left hot corner</a></li>
-<li><a href="https://extensions.gnome.org/extension/906/sound-output-device-chooser/">Sound output device chooser</a></li>
-<li><a href="https://extensions.gnome.org/extension/570/todotxt/">Todo txt</a></li>
-</ul>
+<span class="nv">url</span><span class="o">=</span><span class="s2">&#34;https://github.com/derailed/k9s/releases/download/v</span><span class="si">${</span><span class="nv">version</span><span class="si">}</span><span class="s2">/k9s_Linux_x86_64.tar.gz&#34;</span>
 
+wget <span class="nv">$url</span> -O k9s.tar.gz
+
+tar -zxvf k9s.tar.gz k9s
+
+sudo mv k9s /usr/local/bin
+
+rm k9s.tar.gz
+</code></pre></div>
 
     </article>
 
