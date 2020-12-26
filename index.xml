@@ -1,19 +1,39 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>Home on alexsalter.net</title>
+    <title>Home on </title>
     <link>https://alexsalter.net/</link>
-    <description>Recent content in Home on alexsalter.net</description>
+    <description>Recent content in Home on </description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-gb</language>
     <lastBuildDate>Fri, 25 Dec 2020 21:21:23 +0000</lastBuildDate><atom:link href="https://alexsalter.net/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Audioengine HD3</title>
+      <link>https://alexsalter.net/note/debian/audioengine-hd3/</link>
+      <pubDate>Fri, 25 Dec 2020 23:20:03 +0000</pubDate>
+      
+      <guid>https://alexsalter.net/note/debian/audioengine-hd3/</guid>
+      <description>The Audioengine HD3 speakers do not appear to support a sample rate of 44.1kHz which is the default.
+We therefore need change the sample rate to 48kHz and restart pulseaudio.
+sed \  -i &amp;#39;s/; default-sample-rate = 44100/default-sample-rate = 48000/g&amp;#39; \  /etc/pulse/daemon.conf pulseaudio -k </description>
+    </item>
+    
+    <item>
+      <title>Setup</title>
+      <link>https://alexsalter.net/note/debian/setup/</link>
+      <pubDate>Fri, 25 Dec 2020 23:12:47 +0000</pubDate>
+      
+      <guid>https://alexsalter.net/note/debian/setup/</guid>
+      <description> Drivers  </description>
+    </item>
+    
     <item>
       <title>Packages</title>
       <link>https://alexsalter.net/note/debian/packages/</link>
       <pubDate>Fri, 25 Dec 2020 22:44:12 +0000</pubDate>
       
       <guid>https://alexsalter.net/note/debian/packages/</guid>
-      <description>Packages #  Frequently used packages
+      <description>Frequently used packages
    Name Description     bridge-utils Utilities for configuring the Linux Ethernet bridge   dnsutils Clients provided with BIND   htop interactive processes viewer   hwinfo Hardware identification system    </description>
     </item>
     

@@ -22,11 +22,11 @@ update-grub Reference #     Name Link     Debian XPS 15 9560 https://wiki." />
 <meta property="og:url" content="https://alexsalter.net/note/debian/dell-xps-15-9560/" />
 <meta property="article:published_time" content="2020-12-25T19:34:37+00:00" />
 <meta property="article:modified_time" content="2020-12-25T19:34:37+00:00" />
-<title>Dell XPS 15 9560 | alexsalter.net</title>
+<title>Dell XPS 15 9560 | </title>
 <link rel="manifest" href="/manifest.json">
 <link rel="icon" href="/favicon.png" type="image/x-icon">
-<link rel="stylesheet" href="/book.min.09a284f5a03730d86dde350d2c062b1514e48fdfebba7763941c0674ef65748f.css" integrity="sha256-CaKE9aA3MNht3jUNLAYrFRTkj9/rundjlBwGdO9ldI8=">
-<script defer src="/en.search.min.9cc2a1b8f77aab657d0434696e394f16d4a6b09877816ba1d9baafce010ebbf3.js" integrity="sha256-nMKhuPd6q2V9BDRpbjlPFtSmsJh3gWuh2bqvzgEOu/M="></script>
+<link rel="stylesheet" href="/book.min.134b70e5316650a530cb42e4e8630b2a01d532bebfc0337028211175336e4806.css" integrity="sha256-E0tw5TFmUKUwy0Lk6GMLKgHVMr6/wDNwKCERdTNuSAY=">
+<script defer src="/en.search.min.ee7bf800d912d2aa7919f37e56c7a284cbe482f1bbbc7d911bfad2c8fec9f329.js" integrity="sha256-7nv4ANkS0qp5GfN&#43;VseihMvkgvG7vH2RG/rSyP7J8yk="></script>
 <!--
 Made with Book Theme
 https://github.com/alex-shpak/hugo-book
@@ -43,7 +43,7 @@ https://github.com/alex-shpak/hugo-book
       
   <nav>
 <h2 class="book-brand">
-  <a href="/"><span>alexsalter.net</span>
+  <a href="/"><span></span>
   </a>
 </h2>
 
@@ -66,76 +66,6 @@ https://github.com/alex-shpak/hugo-book
 
   
 
-  
-
-
-
-  
-  <ul>
-    
-      
-        <li>
-          
-  
-  
-
-  
-    <span>Notes</span>
-  
-
-          
-  <ul>
-    
-      
-        <li>
-          
-  
-  
-
-  
-    <a href="https://alexsalter.net/note/debian/" class="">Debian</a>
-  
-
-          
-  <ul>
-    
-      
-        <li>
-          
-  
-  
-
-  
-    <a href="https://alexsalter.net/note/debian/packages/" class="">Packages</a>
-  
-
-        </li>
-      
-    
-      
-        <li>
-          
-  
-  
-
-  
-    <a href="https://alexsalter.net/note/debian/dell-xps-15-9560/" class=" active">Dell XPS 15 9560</a>
-  
-
-        </li>
-      
-    
-  </ul>
-
-        </li>
-      
-    
-  </ul>
-
-        </li>
-      
-    
-  </ul>
 
 
 
@@ -185,9 +115,13 @@ https://github.com/alex-shpak/hugo-book
     
   <nav id="TableOfContents">
   <ul>
-    <li><a href="#installer-missing-non-free-wifi-firmware">Installer missing non-free wifi firmware</a></li>
-    <li><a href="#acpi-issue">ACPI issue</a></li>
-    <li><a href="#reference">Reference</a></li>
+    <li>
+      <ul>
+        <li><a href="#installer-missing-non-free-wifi-firmware">Installer missing non-free wifi firmware</a></li>
+        <li><a href="#acpi-issue">ACPI issue</a></li>
+        <li><a href="#reference">Reference</a></li>
+      </ul>
+    </li>
   </ul>
 </nav>
 
@@ -199,25 +133,25 @@ https://github.com/alex-shpak/hugo-book
 
       
       
-  <article class="markdown"><h1 id="installer-missing-non-free-wifi-firmware">
+  <article class="markdown"><h2 id="installer-missing-non-free-wifi-firmware">
   Installer missing non-free wifi firmware
   <a class="anchor" href="#installer-missing-non-free-wifi-firmware">#</a>
-</h1>
+</h2>
 <p>The Intel 8265/8275 requires non-free firmware whoever this can be added to the installation media.</p>
 <p>Copy the non-free <code>firmware-iwlwifi_*_all.deb</code> from <a href="https://cdimage.debian.org/cdimage/unofficial/non-free/firmware/">https://cdimage.debian.org/cdimage/unofficial/non-free/firmware/</a> to <code>firmware</code> folder of the installation media.</p>
-<h1 id="acpi-issue">
+<h2 id="acpi-issue">
   ACPI issue
   <a class="anchor" href="#acpi-issue">#</a>
-</h1>
+</h2>
 <p>There is currently a bug that means that some kernels (particularly newer ones) will detect the wrong ACPI revision.</p>
 <p>Add <code>acpi_rev_override=5</code> to <code>/etc/default/grub</code></p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-ini" data-lang="ini"><span style="color:#a6e22e">GRUB_CMDLINE_LINUX</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;acpi_rev_override=5 quiet&#34;</span>
+<div class="highlight"><pre class="chroma"><code class="language-ini" data-lang="ini"><span class="na">GRUB_CMDLINE_LINUX</span><span class="o">=</span><span class="s">&#34;acpi_rev_override=5 quiet&#34;</span>
 </code></pre></div><p>Update grub</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sh" data-lang="sh">update-grub
-</code></pre></div><h1 id="reference">
+<div class="highlight"><pre class="chroma"><code class="language-sh" data-lang="sh">update-grub
+</code></pre></div><h2 id="reference">
   Reference
   <a class="anchor" href="#reference">#</a>
-</h1>
+</h2>
 <table>
 <thead>
 <tr>
@@ -270,9 +204,13 @@ https://github.com/alex-shpak/hugo-book
       
   <nav id="TableOfContents">
   <ul>
-    <li><a href="#installer-missing-non-free-wifi-firmware">Installer missing non-free wifi firmware</a></li>
-    <li><a href="#acpi-issue">ACPI issue</a></li>
-    <li><a href="#reference">Reference</a></li>
+    <li>
+      <ul>
+        <li><a href="#installer-missing-non-free-wifi-firmware">Installer missing non-free wifi firmware</a></li>
+        <li><a href="#acpi-issue">ACPI issue</a></li>
+        <li><a href="#reference">Reference</a></li>
+      </ul>
+    </li>
   </ul>
 </nav>
 
