@@ -786,6 +786,18 @@ build_prompt<span class="o">()</span> <span class="o">{</span>
 <span class="nb">alias</span> <span class="nv">asi</span><span class="o">=</span><span class="s2">&#34;alias | sort | grep -i&#34;</span>
 <span class="nb">alias</span> <span class="nv">kcu</span><span class="o">=</span><span class="s2">&#34;kubectl config unset current-context&#34;</span>
 <span class="nb">alias</span> <span class="nv">uz</span><span class="o">=</span><span class="s2">&#34;source ~/.zshrc&#34;</span>
+</code></pre></div><h1 id="time-the-plugins">Time the plugins</h1>
+<div class="highlight"><pre class="chroma"><code class="language-bash" data-lang="bash"><span class="k">for</span> plugin <span class="o">(</span><span class="nv">$plugins</span><span class="o">)</span><span class="p">;</span> <span class="k">do</span>
+  <span class="nv">timer</span><span class="o">=</span><span class="k">$(($(</span>date +%s%N<span class="k">)</span><span class="o">/</span><span class="m">1000000</span><span class="k">))</span>
+  <span class="k">if</span> <span class="o">[</span> -f <span class="nv">$ZSH_CUSTOM</span>/plugins/<span class="nv">$plugin</span>/<span class="nv">$plugin</span>.plugin.zsh <span class="o">]</span><span class="p">;</span> <span class="k">then</span>  
+    <span class="nb">source</span> <span class="nv">$ZSH_CUSTOM</span>/plugins/<span class="nv">$plugin</span>/<span class="nv">$plugin</span>.plugin.zsh  
+  <span class="k">elif</span> <span class="o">[</span> -f <span class="nv">$ZSH</span>/plugins/<span class="nv">$plugin</span>/<span class="nv">$plugin</span>.plugin.zsh <span class="o">]</span><span class="p">;</span> <span class="k">then</span>  
+    <span class="nb">source</span> <span class="nv">$ZSH</span>/plugins/<span class="nv">$plugin</span>/<span class="nv">$plugin</span>.plugin.zsh  
+  <span class="k">fi</span>  
+  <span class="nv">now</span><span class="o">=</span><span class="k">$(($(</span>date +%s%N<span class="k">)</span><span class="o">/</span><span class="m">1000000</span><span class="k">))</span>
+  <span class="nv">elapsed</span><span class="o">=</span><span class="k">$((</span><span class="nv">$now</span><span class="o">-</span><span class="nv">$timer</span><span class="k">))</span>  
+  <span class="nb">echo</span> <span class="nv">$elapsed</span><span class="s2">&#34;:&#34;</span> <span class="nv">$plugin</span>  
+<span class="k">done</span> 
 </code></pre></div>
 
     </article>
@@ -834,7 +846,7 @@ build_prompt<span class="o">()</span> <span class="o">{</span>
 
 
 
-<script defer src="/js/en.search.min.46468bf743195613fd202e694bcbe3eff18a759ac20b6dc47ec750b95b6c3c04.js"></script>
+<script defer src="/js/en.search.min.23274afe8b1203cdb3314aeda5f6fee55402f2c74243d42f45e090a03c397076.js"></script>
 
 
 
