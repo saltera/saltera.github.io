@@ -8,12 +8,22 @@
   </url>
   
   <url>
-    <loc>https://alexsalter.net/note/debian/k9s/</loc>
-    <lastmod>2020-12-26T21:26:40+00:00</lastmod>
+    <loc>https://alexsalter.net/note/</loc>
+    <lastmod>2020-12-27T16:47:09+00:00</lastmod>
   </url>
   
   <url>
-    <loc>https://alexsalter.net/note/</loc>
+    <loc>https://alexsalter.net/note/debian/yq/</loc>
+    <lastmod>2020-12-27T16:47:09+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://alexsalter.net/note/debian/virtualization/</loc>
+    <lastmod>2020-12-26T22:05:20+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://alexsalter.net/note/debian/k9s/</loc>
     <lastmod>2020-12-26T21:26:40+00:00</lastmod>
   </url>
   

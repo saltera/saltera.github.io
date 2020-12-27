@@ -322,6 +322,52 @@
             
             
                 <span class="flex">
+                    <a href="/note/debian/virtualization/" class="gdoc-nav__entry ">
+                        Virtualization
+                    </a>
+                </span>
+            
+            
+
+            
+            </li>
+            
+            
+            
+
+            
+            
+            
+            
+            
+
+            <li>
+            
+            
+                <span class="flex">
+                    <a href="/note/debian/yq/" class="gdoc-nav__entry ">
+                        Yq
+                    </a>
+                </span>
+            
+            
+
+            
+            </li>
+            
+            
+            
+
+            
+            
+            
+            
+            
+
+            <li>
+            
+            
+                <span class="flex">
                     <a href="/note/debian/zsh/" class="gdoc-nav__entry ">
                         zsh
                     </a>
@@ -427,7 +473,7 @@
     
 
 
-<div class="gdoc-page__anchorwrap"><h2 id="main">Main<a data-clipboard-text="https://alexsalter.net/note/debian/packages/#main" class="gdoc-page__anchor gdoc-page__anchor--right clip" aria-label="Anchor Main" href="#main"><svg class="icon link"><use xlink:href="#link"></use></svg></a></h2></div>
+<div class="gdoc-page__anchorwrap"><h2 id="install-main">Install main<a data-clipboard-text="https://alexsalter.net/note/debian/packages/#install-main" class="gdoc-page__anchor gdoc-page__anchor--right clip" aria-label="Anchor Install main" href="#install-main"><svg class="icon link"><use xlink:href="#link"></use></svg></a></h2></div>
 <table>
 <thead>
 <tr>
@@ -494,11 +540,13 @@ apt install <span class="se">\
 </span><span class="se"></span>  hwinfo <span class="se">\
 </span><span class="se"></span>  inkscape <span class="se">\
 </span><span class="se"></span>  lsb-release <span class="se">\
+</span><span class="se"></span>  mc <span class="se">\
 </span><span class="se"></span>  openssh-server <span class="se">\
 </span><span class="se"></span>  pavucontrol <span class="se">\
 </span><span class="se"></span>  software-properties-common <span class="se">\
-</span><span class="se"></span>  tree
-</code></pre></div><div class="gdoc-page__anchorwrap"><h2 id="restricted">Restricted<a data-clipboard-text="https://alexsalter.net/note/debian/packages/#restricted" class="gdoc-page__anchor gdoc-page__anchor--right clip" aria-label="Anchor Restricted" href="#restricted"><svg class="icon link"><use xlink:href="#link"></use></svg></a></h2></div>
+</span><span class="se"></span>  tree <span class="se">\
+</span><span class="se"></span>  yq
+</code></pre></div><div class="gdoc-page__anchorwrap"><h2 id="insall-non-free">Insall Non-free<a data-clipboard-text="https://alexsalter.net/note/debian/packages/#insall-non-free" class="gdoc-page__anchor gdoc-page__anchor--right clip" aria-label="Anchor Insall Non-free" href="#insall-non-free"><svg class="icon link"><use xlink:href="#link"></use></svg></a></h2></div>
 <div class="highlight"><pre class="chroma"><code class="language-sh" data-lang="sh">apt install <span class="se">\
 </span><span class="se"></span>  gstreamer1.0-libav <span class="se">\
 </span><span class="se"></span>  gstreamer1.0-plugins-ugly <span class="se">\
@@ -508,6 +556,34 @@ apt install <span class="se">\
 </span><span class="se"></span>  rar <span class="se">\
 </span><span class="se"></span>  ttf-mscorefonts-installer <span class="se">\
 </span><span class="se"></span>  unrar
+</code></pre></div><div class="gdoc-page__anchorwrap"><h2 id="remove-games">Remove games<a data-clipboard-text="https://alexsalter.net/note/debian/packages/#remove-games" class="gdoc-page__anchor gdoc-page__anchor--right clip" aria-label="Anchor Remove games" href="#remove-games"><svg class="icon link"><use xlink:href="#link"></use></svg></a></h2></div>
+<div class="highlight"><pre class="chroma"><code class="language-sh" data-lang="sh">apt-get purge <span class="se">\
+</span><span class="se"></span>  aisleriot<span class="se">\
+</span><span class="se"></span>  atomix<span class="se">\
+</span><span class="se"></span>  five-or-more<span class="se">\
+</span><span class="se"></span>  four-in-a-row<span class="se">\
+</span><span class="se"></span>  gnome-2048<span class="se">\
+</span><span class="se"></span>  gnome-chess<span class="se">\
+</span><span class="se"></span>  gnome-klotski<span class="se">\
+</span><span class="se"></span>  gnome-mahjongg<span class="se">\
+</span><span class="se"></span>  gnome-mines<span class="se">\
+</span><span class="se"></span>  gnome-nibbles<span class="se">\
+</span><span class="se"></span>  gnome-robots<span class="se">\
+</span><span class="se"></span>  gnome-sudoku<span class="se">\
+</span><span class="se"></span>  gnome-taquin<span class="se">\
+</span><span class="se"></span>  gnome-tetravex <span class="se">\
+</span><span class="se"></span>  hitori<span class="se">\
+</span><span class="se"></span>  iagno<span class="se">\
+</span><span class="se"></span>  lightsoff<span class="se">\
+</span><span class="se"></span>  quadrapassel<span class="se">\
+</span><span class="se"></span>  swell-foop<span class="se">\
+</span><span class="se"></span>  tali
+
+apt-get autoremove
+</code></pre></div><div class="gdoc-page__anchorwrap"><h2 id="compare-to-inital">Compare to inital<a data-clipboard-text="https://alexsalter.net/note/debian/packages/#compare-to-inital" class="gdoc-page__anchor gdoc-page__anchor--right clip" aria-label="Anchor Compare to inital" href="#compare-to-inital"><svg class="icon link"><use xlink:href="#link"></use></svg></a></h2></div>
+<div class="highlight"><pre class="chroma"><code class="language-sh" data-lang="sh">comm -23 <span class="se">\
+</span><span class="se"></span>  &lt;<span class="o">(</span>apt-mark showmanual <span class="p">|</span> sort -u<span class="o">)</span> <span class="se">\
+</span><span class="se"></span>  &lt;<span class="o">(</span>gzip -dc /var/log/installer/initial-status.gz <span class="p">|</span> sed -n <span class="s1">&#39;s/^Package: //p&#39;</span> <span class="p">|</span> sort -u<span class="o">)</span>
 </code></pre></div>
 
     </article>
@@ -556,7 +632,7 @@ apt install <span class="se">\
 
 
 
-<script defer src="/js/en.search.min.8b6768be86e5b7580feebd4d71e730bd2f5d04045de8bd13e3e4ba0fb5abcbb9.js"></script>
+<script defer src="/js/en.search.min.4b6be6a3cd4f681216eb42e3e3c14151b6e66e7718a2efaf241c26463e7d31d0.js"></script>
 
 
 

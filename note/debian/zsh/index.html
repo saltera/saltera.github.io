@@ -322,6 +322,52 @@
             
             
                 <span class="flex">
+                    <a href="/note/debian/virtualization/" class="gdoc-nav__entry ">
+                        Virtualization
+                    </a>
+                </span>
+            
+            
+
+            
+            </li>
+            
+            
+            
+
+            
+            
+            
+            
+            
+
+            <li>
+            
+            
+                <span class="flex">
+                    <a href="/note/debian/yq/" class="gdoc-nav__entry ">
+                        Yq
+                    </a>
+                </span>
+            
+            
+
+            
+            </li>
+            
+            
+            
+
+            
+            
+            
+            
+            
+
+            <li>
+            
+            
+                <span class="flex">
                     <a href="/note/debian/zsh/" class="gdoc-nav__entry is-active">
                         zsh
                     </a>
@@ -427,7 +473,9 @@
     
 
 
-<div class="gdoc-page__anchorwrap"><h2 id="my-theme">My theme<a data-clipboard-text="https://alexsalter.net/note/debian/zsh/#my-theme" class="gdoc-page__anchor gdoc-page__anchor--right clip" aria-label="Anchor My theme" href="#my-theme"><svg class="icon link"><use xlink:href="#link"></use></svg></a></h2></div>
+<div class="gdoc-page__anchorwrap"><h2 id="install">Install<a data-clipboard-text="https://alexsalter.net/note/debian/zsh/#install" class="gdoc-page__anchor gdoc-page__anchor--right clip" aria-label="Anchor Install" href="#install"><svg class="icon link"><use xlink:href="#link"></use></svg></a></h2></div>
+<div class="highlight"><pre class="chroma"><code class="language-sh" data-lang="sh">apt install zsh zsh-syntax-highlighting
+</code></pre></div><div class="gdoc-page__anchorwrap"><h2 id="my-theme">My theme<a data-clipboard-text="https://alexsalter.net/note/debian/zsh/#my-theme" class="gdoc-page__anchor gdoc-page__anchor--right clip" aria-label="Anchor My theme" href="#my-theme"><svg class="icon link"><use xlink:href="#link"></use></svg></a></h2></div>
 <p>Download <a href="https://github.com/saltera/my-zsh-theme/blob/master/my.zsh-theme">https://github.com/saltera/my-zsh-theme/blob/master/my.zsh-theme</a> to <code>$ZSH/custom/themes/my.zsh-theme</code></p>
 <div class="highlight"><pre class="chroma"><code class="language-sh" data-lang="sh"><span class="c1"># vim:ft=zsh ts=2 sw=2 sts=2</span>
 <span class="c1">#</span>
@@ -715,6 +763,7 @@ build_prompt<span class="o">()</span> <span class="o">{</span>
 <span class="nv">plugins</span><span class="o">=(</span>git golang kubectl kube-ps1<span class="o">)</span>
 
 <span class="nb">source</span> <span class="nv">$ZSH</span>/oh-my-zsh.sh
+<span class="nb">source</span> /usr/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
 
 <span class="nb">export</span> <span class="nv">GOROOT</span><span class="o">=</span>/usr/local/go
 <span class="nb">export</span> <span class="nv">GOPATH</span><span class="o">=</span>~/go
@@ -769,7 +818,7 @@ build_prompt<span class="o">()</span> <span class="o">{</span>
 
 
 
-<script defer src="/js/en.search.min.8b6768be86e5b7580feebd4d71e730bd2f5d04045de8bd13e3e4ba0fb5abcbb9.js"></script>
+<script defer src="/js/en.search.min.4b6be6a3cd4f681216eb42e3e3c14151b6e66e7718a2efaf241c26463e7d31d0.js"></script>
 
 
 

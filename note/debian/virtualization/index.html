@@ -4,9 +4,9 @@
 <head>
     <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<meta name="description" content="Audioengine HD3">
+<meta name="description" content="Virtualization">
 
-<title>Audioengine HD3 | </title>
+<title>Virtualization | </title>
 
 <link rel="icon" href="/favicon/favicon-32x32.png" type="image/x-icon">
 
@@ -161,7 +161,7 @@
             
             
                 <span class="flex">
-                    <a href="/note/debian/audioengine-hd3/" class="gdoc-nav__entry is-active">
+                    <a href="/note/debian/audioengine-hd3/" class="gdoc-nav__entry ">
                         Audioengine HD3
                     </a>
                 </span>
@@ -322,7 +322,7 @@
             
             
                 <span class="flex">
-                    <a href="/note/debian/virtualization/" class="gdoc-nav__entry ">
+                    <a href="/note/debian/virtualization/" class="gdoc-nav__entry is-active">
                         Virtualization
                     </a>
                 </span>
@@ -446,7 +446,7 @@
         
     
     
-        <a href='/'>Home</a> / <a href='/note/'>Notes</a> / <a href='/note/debian/'>Debian</a> / Audioengine HD3
+        <a href='/'>Home</a> / <a href='/note/'>Notes</a> / <a href='/note/debian/'>Debian</a> / Virtualization
     
 
     
@@ -465,7 +465,7 @@
 
 
     <article class="gdoc-markdown">
-        <h1>Audioengine HD3</h1>
+        <h1>Virtualization</h1>
         
 
 
@@ -473,13 +473,37 @@
     
 
 
-<p>The Audioengine HD3 speakers do not appear to support a sample rate of 44.1kHz which is the default.</p>
-<p>We therefore need change the sample rate to 48kHz and  restart pulseaudio.</p>
-<div class="highlight"><pre class="chroma"><code class="language-sh" data-lang="sh">sed <span class="se">\
-</span><span class="se"></span>  -i <span class="s1">&#39;s/; default-sample-rate = 44100/default-sample-rate = 48000/g&#39;</span> <span class="se">\
-</span><span class="se"></span>  /etc/pulse/daemon.conf
+<div class="gdoc-page__anchorwrap"><h2 id="bridge-configuration">Bridge configuration<a data-clipboard-text="https://alexsalter.net/note/debian/virtualization/#bridge-configuration" class="gdoc-page__anchor gdoc-page__anchor--right clip" aria-label="Anchor Bridge configuration" href="#bridge-configuration"><svg class="icon link"><use xlink:href="#link"></use></svg></a></h2></div>
+<p><code>/etc/networking/interfaces</code></p>
+<pre><code># This file describes the network interfaces available on your system
+# and how to activate them. For more information, see interfaces(5).
 
-pulseaudio -k
+source /etc/network/interfaces.d/*
+
+# The loopback network interface
+auto lo br0
+iface lo inet loopback
+
+iface enp0s31f6 inet manual
+
+iface br0 inet static 
+  bridge_ports enp0s31f6 
+    address 10.0.10.100
+    broadcast 10.0.10.255
+    netmask 255.255.255.0
+    gateway 10.0.10.254
+    bridge_stp off          # disable Spanning Tree Protocol
+    bridge_waitport 0       # no delay before a port becomes available
+    bridge_fd 0             # no forwarding delay
+    bridge_ports none       # if you do not want to bind to any ports
+    bridge_ports regex eth* # use a regular expression to define ports
+
+</code></pre><div class="gdoc-page__anchorwrap"><h2 id="enable-forwarding">Enable forwarding<a data-clipboard-text="https://alexsalter.net/note/debian/virtualization/#enable-forwarding" class="gdoc-page__anchor gdoc-page__anchor--right clip" aria-label="Anchor Enable forwarding" href="#enable-forwarding"><svg class="icon link"><use xlink:href="#link"></use></svg></a></h2></div>
+<div class="gdoc-page__anchorwrap"><h2 id="install">Install<a data-clipboard-text="https://alexsalter.net/note/debian/virtualization/#install" class="gdoc-page__anchor gdoc-page__anchor--right clip" aria-label="Anchor Install" href="#install"><svg class="icon link"><use xlink:href="#link"></use></svg></a></h2></div>
+<div class="highlight"><pre class="chroma"><code class="language-sh" data-lang="sh">apt install <span class="se">\
+</span><span class="se"></span>    libvirt-daemon <span class="se">\
+</span><span class="se"></span>    qemu-kvm <span class="se">\
+</span><span class="se"></span>    virt-manager
 </code></pre></div>
 
     </article>

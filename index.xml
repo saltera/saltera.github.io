@@ -8,6 +8,25 @@
     <language>en-gb</language>
     <lastBuildDate>Fri, 25 Dec 2020 21:21:23 +0000</lastBuildDate><atom:link href="https://alexsalter.net/index.xml" rel="self" type="application/rss+xml" />
     <item>
+      <title>Yq</title>
+      <link>https://alexsalter.net/note/debian/yq/</link>
+      <pubDate>Sun, 27 Dec 2020 16:47:09 +0000</pubDate>
+      
+      <guid>https://alexsalter.net/note/debian/yq/</guid>
+      <description>Install GO111MODULE=on go get github.com/mikefarah/yq/v4 </description>
+    </item>
+    
+    <item>
+      <title>Virtualization</title>
+      <link>https://alexsalter.net/note/debian/virtualization/</link>
+      <pubDate>Sat, 26 Dec 2020 22:05:20 +0000</pubDate>
+      
+      <guid>https://alexsalter.net/note/debian/virtualization/</guid>
+      <description>Bridge configuration /etc/networking/interfaces
+# This file describes the network interfaces available on your system # and how to activate them. For more information, see interfaces(5). source /etc/network/interfaces.d/* # The loopback network interface auto lo br0 iface lo inet loopback iface enp0s31f6 inet manual iface br0 inet static bridge_ports enp0s31f6 address 10.0.10.100 broadcast 10.0.10.255 netmask 255.255.255.0 gateway 10.0.10.254 bridge_stp off # disable Spanning Tree Protocol bridge_waitport 0 # no delay before a port becomes available bridge_fd 0 # no forwarding delay bridge_ports none # if you do not want to bind to any ports bridge_ports regex eth* # use a regular expression to define ports Enable forwarding Install apt install \  libvirt-daemon \  qemu-kvm \  virt-manager </description>
+    </item>
+    
+    <item>
       <title>k9s</title>
       <link>https://alexsalter.net/note/debian/k9s/</link>
       <pubDate>Sat, 26 Dec 2020 21:26:40 +0000</pubDate>
@@ -32,7 +51,7 @@ export GOROOT=/usr/local/go export GOPATH=~/go export PATH=$GOPATH/bin:$GOROOT/b
       <pubDate>Sat, 26 Dec 2020 17:33:25 +0000</pubDate>
       
       <guid>https://alexsalter.net/note/debian/zsh/</guid>
-      <description>My theme Download https://github.com/saltera/my-zsh-theme/blob/master/my.zsh-theme to $ZSH/custom/themes/my.zsh-theme
+      <description>Install apt install zsh zsh-syntax-highlighting My theme Download https://github.com/saltera/my-zsh-theme/blob/master/my.zsh-theme to $ZSH/custom/themes/my.zsh-theme
 # vim:ft=zsh ts=2 sw=2 sts=2 # # My theme is a slightly customized agnoster - https://gist.github.com/3712874 # A Powerline-inspired theme for ZSH # # # README # # In order for this theme to render correctly, you will need a # [Powerline-patched font](https://github.com/Lokaltog/powerline-fonts). # Make sure you have a recent version: the code points that Powerline # uses changed in 2012, and older versions will display incorrectly, # in confusing ways.</description>
     </item>
     
@@ -84,7 +103,7 @@ sed \  -i &amp;#39;s/; default-sample-rate = 44100/default-sample-rate = 48000/g
       <pubDate>Fri, 25 Dec 2020 22:44:12 +0000</pubDate>
       
       <guid>https://alexsalter.net/note/debian/packages/</guid>
-      <description>Main    Name Description     bridge-utils Utilities for configuring the Linux Ethernet bridge   dnsutils Clients provided with BIND   gimp    git    htop interactive processes viewer   inkscape    hwinfo Hardware identification system   openssh-server    pavucontrol    tree displays an indented directory tree, in color    apt update apt install \  apt-transport-https \  bridge-utils \  ca-certificates \  curl \  dnsutils \  gimp \  git \  gnupg \  gnupg2 \  htop \  hwinfo \  inkscape \  lsb-release \  openssh-server \  pavucontrol \  software-properties-common \  tree Restricted apt install \  gstreamer1.</description>
+      <description>Install main    Name Description     bridge-utils Utilities for configuring the Linux Ethernet bridge   dnsutils Clients provided with BIND   gimp    git    htop interactive processes viewer   inkscape    hwinfo Hardware identification system   openssh-server    pavucontrol    tree displays an indented directory tree, in color    apt update apt install \  apt-transport-https \  bridge-utils \  ca-certificates \  curl \  dnsutils \  gimp \  git \  gnupg \  gnupg2 \  htop \  hwinfo \  inkscape \  lsb-release \  mc \  openssh-server \  pavucontrol \  software-properties-common \  tree \  yq Insall Non-free apt install \  gstreamer1.</description>
     </item>
     
     <item>
