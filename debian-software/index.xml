@@ -7,12 +7,23 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>en-gb</language><atom:link href="https://alexsalter.net/debian-software/index.xml" rel="self" type="application/rss+xml" />
     <item>
-      <title>Azure Cli</title>
+      <title>Task</title>
+      <link>https://alexsalter.net/debian-software/task/</link>
+      <pubDate>Mon, 28 Dec 2020 15:18:11 +0000</pubDate>
+      
+      <guid>https://alexsalter.net/debian-software/task/</guid>
+      <description>Taskwarrior is Free and Open Source Software that manages your TODO list from the command line. It is flexible, fast, and unobtrusive. It does its job then gets out of your way.
+Installation apt install \  tasksh \  taskwarrior \ Reference    Name Link     Install https://taskwarrior.org/download/   Docs https://taskwarrior.org/docs/    </description>
+    </item>
+    
+    <item>
+      <title>Azure CLI</title>
       <link>https://alexsalter.net/debian-software/azure-cli/</link>
       <pubDate>Mon, 28 Dec 2020 12:35:24 +0000</pubDate>
       
       <guid>https://alexsalter.net/debian-software/azure-cli/</guid>
-      <description>Install curl -sL https://packages.microsoft.com/keys/microsoft.asc \  | gpg --dearmor \  | tee /etc/apt/trusted.gpg.d/microsoft.gpg &amp;gt; /dev/null AZ_REPO=$(lsb_release -cs) echo &amp;#34;deb [arch=amd64] https://packages.microsoft.com/repos/azure-cli/ $AZ_REPOmain&amp;#34; \  | tee /etc/apt/sources.list.d/azure-cli.list apt update apt install azure-cli Reference    Name Link     Installation https://docs.microsoft.com/en-us/cli/azure/install-azure-cli-linux?pivots=apt    </description>
+      <description>The Azure command-line interface (Azure CLI) is a set of commands used to create and manage Azure resources. The Azure CLI is available across Azure services and is designed to get you working quickly with Azure, with an emphasis on automation.
+Install curl -sL https://packages.microsoft.com/keys/microsoft.asc \  | gpg --dearmor \  | tee /etc/apt/trusted.gpg.d/microsoft.gpg &amp;gt; /dev/null AZ_REPO=$(lsb_release -cs) echo &amp;#34;deb [arch=amd64] https://packages.microsoft.com/repos/azure-cli/ $AZ_REPOmain&amp;#34; \  | tee /etc/apt/sources.list.d/azure-cli.list apt update apt install azure-cli Reference    Name Link     Installation https://docs.</description>
     </item>
     
     <item>
@@ -21,8 +32,8 @@
       <pubDate>Mon, 28 Dec 2020 12:34:58 +0000</pubDate>
       
       <guid>https://alexsalter.net/debian-software/docker/</guid>
-      <description>Install curl -fsSL https://download.docker.com/linux/debian/gpg \  | apt-key add - add-apt-repository &amp;#34;deb [arch=amd64] https://download.docker.com/linux/debian $(lsb_release -cs)stable&amp;#34; apt update apt install docker-ce usermod -aG docker ${USER} su - ${USER} Disable zfs plugin in /etc/containerd/config.toml
-disabled_plugins = [&amp;quot;cri&amp;quot;, &amp;quot;zfs&amp;quot;] Reference    Name Link     Installation https://docs.docker.com/engine/install/debian/    </description>
+      <description>Docker is a set of platform as a service products that use OS-level virtualization to deliver software in packages called containers. Containers are isolated from one another and bundle their own software, libraries and configuration files; they can communicate with each other through well-defined channels.
+Install curl -fsSL https://download.docker.com/linux/debian/gpg \  | apt-key add - add-apt-repository &amp;#34;deb [arch=amd64] https://download.docker.com/linux/debian $(lsb_release -cs)stable&amp;#34; apt update apt install docker-ce usermod -aG docker ${USER} su - ${USER} Disable zfs plugin in /etc/containerd/config.</description>
     </item>
     
     <item>
@@ -31,7 +42,8 @@ disabled_plugins = [&amp;quot;cri&amp;quot;, &amp;quot;zfs&amp;quot;] Reference 
       <pubDate>Mon, 28 Dec 2020 12:34:16 +0000</pubDate>
       
       <guid>https://alexsalter.net/debian-software/github/</guid>
-      <description>Install apt-key adv --keyserver keyserver.ubuntu.com --recv-key C99B11DEB97541F0 apt-add-repository https://cli.github.com/packages apt update apt install gh Reference    Name Link     Installation https://github.com/cli/cli/blob/trunk/docs/install_linux.md#debian-ubuntu-linux-apt    </description>
+      <description>GitHub CLI brings GitHub to your terminal. Free and open source.
+Install apt-key adv --keyserver keyserver.ubuntu.com --recv-key C99B11DEB97541F0 apt-add-repository https://cli.github.com/packages apt update apt install gh Reference    Name Link     Installation https://github.com/cli/cli/blob/trunk/docs/install_linux.md#debian-ubuntu-linux-apt    </description>
     </item>
     
     <item>
@@ -40,7 +52,10 @@ disabled_plugins = [&amp;quot;cri&amp;quot;, &amp;quot;zfs&amp;quot;] Reference 
       <pubDate>Mon, 28 Dec 2020 12:33:52 +0000</pubDate>
       
       <guid>https://alexsalter.net/debian-software/helm/</guid>
-      <description>Install curl https://baltocdn.com/helm/signing.asc \  | apt-key add - echo &amp;#34;deb https://baltocdn.com/helm/stable/debian/ all main&amp;#34; \  | tee /etc/apt/sources.list.d/helm-stable-debian.list apt-get update apt-get install helm Reference    Name Link     Installation https://helm.sh/docs/intro/install/#from-apt-debianubuntu    </description>
+      <description>Helm helps you manage Kubernetes applications — Helm Charts help you define, install, and upgrade even the most complex Kubernetes application.
+Charts are easy to create, version, share, and publish — so start using Helm and stop the copy-and-paste.
+Helm is a graduated project in the CNCF and is maintained by the Helm community.
+Install curl https://baltocdn.com/helm/signing.asc \  | apt-key add - echo &amp;#34;deb https://baltocdn.com/helm/stable/debian/ all main&amp;#34; \  | tee /etc/apt/sources.</description>
     </item>
     
     <item>
@@ -49,7 +64,8 @@ disabled_plugins = [&amp;quot;cri&amp;quot;, &amp;quot;zfs&amp;quot;] Reference 
       <pubDate>Mon, 28 Dec 2020 12:33:32 +0000</pubDate>
       
       <guid>https://alexsalter.net/debian-software/kubectl/</guid>
-      <description>Install curl -s https://packages.cloud.google.com/apt/doc/apt-key.gpg \  | apt-key add - echo &amp;#34;deb https://apt.kubernetes.io/ kubernetes-xenial main&amp;#34; \  | tee -a /etc/apt/sources.list.d/kubernetes.list apt-get update apt-get install kubectl Reference    Name Link     Installation https://kubernetes.io/docs/tasks/tools/install-kubectl/#install-using-native-package-management    </description>
+      <description>The kubectl command line tool lets you control Kubernetes clusters.
+Install curl -s https://packages.cloud.google.com/apt/doc/apt-key.gpg \  | apt-key add - echo &amp;#34;deb https://apt.kubernetes.io/ kubernetes-xenial main&amp;#34; \  | tee -a /etc/apt/sources.list.d/kubernetes.list apt-get update apt-get install kubectl Reference    Name Link     Installation https://kubernetes.io/docs/tasks/tools/install-kubectl/#install-using-native-package-management    </description>
     </item>
     
     <item>
@@ -58,7 +74,9 @@ disabled_plugins = [&amp;quot;cri&amp;quot;, &amp;quot;zfs&amp;quot;] Reference 
       <pubDate>Mon, 28 Dec 2020 12:32:53 +0000</pubDate>
       
       <guid>https://alexsalter.net/debian-software/microsoft-dot-net-sdk/</guid>
-      <description>Install wget https://packages.microsoft.com/config/debian/10/packages-microsoft-prod.deb \  -O packages-microsoft-prod.deb dpkg -i packages-microsoft-prod.deb rm packages-microsoft-prod.deb apt-get update apt-get install -y dotnet-sdk-3.1 apt-get install -y dotnet-sdk-5.0 Reference    Name Link     Installation https://docs.microsoft.com/en-us/dotnet/core/install/linux-debian    </description>
+      <description>.NET is a free, cross-platform, open source developer platform for building many different types of applications.
+With .NET, you can use multiple languages, editors, and libraries to build for web, mobile, desktop, games, and IoT.
+Install wget https://packages.microsoft.com/config/debian/10/packages-microsoft-prod.deb \  -O packages-microsoft-prod.deb dpkg -i packages-microsoft-prod.deb rm packages-microsoft-prod.deb apt-get update apt-get install -y dotnet-sdk-3.1 apt-get install -y dotnet-sdk-5.0 Reference    Name Link     Installation https://docs.microsoft.com/en-us/dotnet/core/install/linux-debian    </description>
     </item>
     
     <item>
@@ -67,7 +85,8 @@ disabled_plugins = [&amp;quot;cri&amp;quot;, &amp;quot;zfs&amp;quot;] Reference 
       <pubDate>Mon, 28 Dec 2020 12:32:24 +0000</pubDate>
       
       <guid>https://alexsalter.net/debian-software/terraform/</guid>
-      <description>Install curl -fsSL https://apt.releases.hashicorp.com/gpg \  | sudo apt-key add - sudo apt-add-repository &amp;#34;deb [arch=$(dpkg --print-architecture)] https://apt.releases.hashicorp.com $(lsb_release -cs)main&amp;#34; apt update apt install terraform Reference    Name Link     Installation https://www.terraform.io/docs/cli/install/apt.html    </description>
+      <description>Terraform is an open-source infrastructure as code software tool that provides a consistent CLI workflow to manage hundreds of cloud services. Terraform codifies cloud APIs into declarative configuration files.
+Install curl -fsSL https://apt.releases.hashicorp.com/gpg \  | sudo apt-key add - sudo apt-add-repository &amp;#34;deb [arch=$(dpkg --print-architecture)] https://apt.releases.hashicorp.com $(lsb_release -cs)main&amp;#34; apt update apt install terraform Reference    Name Link     Installation https://www.terraform.io/docs/cli/install/apt.html    </description>
     </item>
     
     <item>
@@ -76,7 +95,8 @@ disabled_plugins = [&amp;quot;cri&amp;quot;, &amp;quot;zfs&amp;quot;] Reference 
       <pubDate>Mon, 28 Dec 2020 12:31:40 +0000</pubDate>
       
       <guid>https://alexsalter.net/debian-software/visual-code/</guid>
-      <description>Install curl -sSL https://packages.microsoft.com/keys/microsoft.asc \  | apt-key add - add-apt-repository &amp;#34;deb [arch=amd64] https://packages.microsoft.com/repos/vscode stable main&amp;#34; apt update apt install code Reference    Name Link     Installation https://code.visualstudio.com/docs/setup/linux#_debian-and-ubuntu-based-distributions    </description>
+      <description>Visual Studio Code is a code editor redefined and optimized for building and debugging modern web and cloud applications. Visual Studio Code is free and available on your favorite platform - Linux, macOS, and Windows.
+Install curl -sSL https://packages.microsoft.com/keys/microsoft.asc \  | apt-key add - add-apt-repository &amp;#34;deb [arch=amd64] https://packages.microsoft.com/repos/vscode stable main&amp;#34; apt update apt install code Reference    Name Link     Visual Studio Code https://code.visualstudio.com/   Installation https://code.</description>
     </item>
     
     <item>
@@ -85,7 +105,8 @@ disabled_plugins = [&amp;quot;cri&amp;quot;, &amp;quot;zfs&amp;quot;] Reference 
       <pubDate>Sun, 27 Dec 2020 16:47:09 +0000</pubDate>
       
       <guid>https://alexsalter.net/debian-software/yq/</guid>
-      <description>Install GO111MODULE=on go get github.com/mikefarah/yq/v4 Reference    Name Link     Installation https://github.com/mikefarah/yq#go-get    </description>
+      <description>yq is a lightweight and portable command-line YAML processor. The aim of the project is to be the jq or sed of yaml files.
+Install GO111MODULE=on go get github.com/mikefarah/yq/v4 Reference    Name Link     Installation https://github.com/mikefarah/yq#go-get    </description>
     </item>
     
     <item>
@@ -94,10 +115,10 @@ disabled_plugins = [&amp;quot;cri&amp;quot;, &amp;quot;zfs&amp;quot;] Reference 
       <pubDate>Sat, 26 Dec 2020 22:05:20 +0000</pubDate>
       
       <guid>https://alexsalter.net/debian-software/qemu-kvm/</guid>
-      <description>This approach doesn&amp;rsquo;t currently support wireless adapters.
+      <description>QEMU is a fast processor emulator. This package provides just a wrapper script /usr/bin/kvm which run qemu-system-x86 in kvm mode for backwards compatibility.
+⚠ This approach doesn&amp;rsquo;t currently support wireless adapters.
 Install apt install \  libvirt-daemon \  qemu-kvm \  virt-manager Bridge configuration In order for the VM&amp;rsquo;s to be accessible on the network we will create bridge using the primary nic.
-This is achieved by setting the nic to manual and creating a bridge and add the nic as a port. /etc/networking/interfaces
-# This file describes the network interfaces available on your system # and how to activate them.</description>
+This is achieved by setting the nic to manual and creating a bridge and add the nic as a port.</description>
     </item>
     
     <item>
@@ -106,7 +127,8 @@ This is achieved by setting the nic to manual and creating a bridge and add the 
       <pubDate>Sat, 26 Dec 2020 21:26:40 +0000</pubDate>
       
       <guid>https://alexsalter.net/debian-software/k9s/</guid>
-      <description>Install version=&amp;#39;0.24.2&amp;#39; url=&amp;#34;https://github.com/derailed/k9s/releases/download/v${version}/k9s_Linux_x86_64.tar.gz&amp;#34; wget $url -O k9s.tar.gz tar -zxvf k9s.tar.gz k9s sudo mv k9s /usr/local/bin rm k9s.tar.gz Reference    Name Link     Installation https://github.com/derailed/k9s#installation    </description>
+      <description>K9s is a terminal based UI to interact with your Kubernetes clusters. The aim of this project is to make it easier to navigate, observe and manage your deployed applications in the wild. K9s continually watches Kubernetes for changes and offers subsequent commands to interact with your observed resources.
+Install version=&amp;#39;0.24.2&amp;#39; url=&amp;#34;https://github.com/derailed/k9s/releases/download/v${version}/k9s_Linux_x86_64.tar.gz&amp;#34; wget $url -O k9s.tar.gz tar -zxvf k9s.tar.gz k9s sudo mv k9s /usr/local/bin rm k9s.tar.gz Reference    Name Link     Installation https://github.</description>
     </item>
     
     <item>
@@ -115,7 +137,8 @@ This is achieved by setting the nic to manual and creating a bridge and add the 
       <pubDate>Sat, 26 Dec 2020 17:42:34 +0000</pubDate>
       
       <guid>https://alexsalter.net/debian-software/go/</guid>
-      <description>Install version=&amp;#34;1.15.6&amp;#34; wget https://golang.org/dl/go${version}.linux-amd64.tar.gz -O go.tar.gz tar -xvf go.tar.gz sudo mv go /usr/local rm go.tar.gz mkdir -p ~/go/bin Add environment variables
+      <description>Go is an open source programming language that makes it easy to build simple, reliable, and efficient software.
+Install version=&amp;#34;1.15.6&amp;#34; wget https://golang.org/dl/go${version}.linux-amd64.tar.gz -O go.tar.gz tar -xvf go.tar.gz sudo mv go /usr/local rm go.tar.gz mkdir -p ~/go/bin Add environment variables
 export GOROOT=/usr/local/go export GOPATH=~/go export PATH=$GOPATH/bin:$GOROOT/bin:$PATH Reference    Name Link     Installation https://golang.org/doc/install    </description>
     </item>
     
@@ -125,8 +148,10 @@ export GOROOT=/usr/local/go export GOPATH=~/go export PATH=$GOPATH/bin:$GOROOT/b
       <pubDate>Sat, 26 Dec 2020 17:33:25 +0000</pubDate>
       
       <guid>https://alexsalter.net/debian-software/zsh/</guid>
-      <description>Install apt install zsh zsh-syntax-highlighting Theme zsh-theme`
-# vim:ft=zsh ts=2 sw=2 sts=2 # # Customization of agnoster&amp;#39;s Theme - https://gist.github.com/3712874 # Removed mercurial, bzr, aws and added kube  # A Powerline-inspired theme for ZSH # # # README # # In order for this theme to render correctly, you will need a # [Powerline-patched font](https://github.com/Lokaltog/powerline-fonts). # Make sure you have a recent version: the code points that Powerline # uses changed in 2012, and older versions will display incorrectly, # in confusing ways.</description>
+      <description>Zsh is a shell designed for interactive use, although it is also a powerful scripting language.
+Oh My Zsh is a delightful, open source, community-driven framework for managing your Zsh configuration. It comes bundled with thousands of helpful functions, helpers, plugins, themes, and a few things that make you shout&amp;hellip; &amp;ldquo;Oh My ZSH!&amp;rdquo;
+Install apt install \  zsh \  zsh-syntax-highlighting Theme zsh-theme`
+# vim:ft=zsh ts=2 sw=2 sts=2 # # Customization of agnoster&amp;#39;s Theme - https://gist.</description>
     </item>
     
     <item>
@@ -135,8 +160,9 @@ export GOROOT=/usr/local/go export GOPATH=~/go export PATH=$GOPATH/bin:$GOROOT/b
       <pubDate>Sat, 26 Dec 2020 14:33:50 +0000</pubDate>
       
       <guid>https://alexsalter.net/debian-software/gnome/</guid>
-      <description>Appearance Change the theme to Adwaita-dark
-gsettings set org.gnome.desktop.interface gtk-theme &amp;#34;Adwaita-dark&amp;#34; Install Shell Extensions Install the gnome-shell-extensions package.
+      <description>An easy and elegant way to use your computer, GNOME is designed to put you in control and get things done.
+Install apt install \  task-gnome-desktop Appearance Change the theme to Adwaita-dark
+gsettings set org.gnome.desktop.interface gtk-theme &amp;#34;Adwaita-dark&amp;#34; Shell Extensions Install the gnome-shell-extensions package.
 apt update apt install gnome-shell-extensions Activate packages on https://extensions.gnome.org
  No top left hot corner Sound output device chooser Todo txt  Additional Shortcuts Navigation    Action Key     Hide all normal windows Super + D    </description>
     </item>
@@ -147,7 +173,7 @@ apt update apt install gnome-shell-extensions Activate packages on https://exten
       <pubDate>Fri, 25 Dec 2020 22:44:12 +0000</pubDate>
       
       <guid>https://alexsalter.net/debian-software/general/</guid>
-      <description>Install from main apt update apt install \  apt-transport-https \  backintime-common \  bridge-utils \  ca-certificates \  curl \  dnsutils \  gimp \  git \  gnupg \  gnupg2 \  gstreamer1.0-libav \  gstreamer1.0-plugins-ugly \  gstreamer1.0-vaapi \  htop \  hwinfo \  inkscape \  libavcodec-extra \  lsb-release \  mc \  openssh-server \  pavucontrol \  software-properties-common \  tasksh \  taskwarrior \  tree \  yq Install from contrib apt install \  intel-microcode Install from non-free apt install \  rar \  unrar Remove games apt-get purge \  aisleriot\  atomix\  five-or-more\  four-in-a-row\  gnome-2048\  gnome-chess\  gnome-klotski\  gnome-mahjongg\  gnome-mines\  gnome-nibbles\  gnome-robots\  gnome-sudoku\  gnome-taquin\  gnome-tetravex \  hitori\  iagno\  lightsoff\  quadrapassel\  swell-foop\  tali apt-get autoremove Manually installed Compare the current packages to those that were initially installed.</description>
+      <description>Install from main apt update apt install \  apt-transport-https \  backintime-common \  bridge-utils \  ca-certificates \  curl \  dnsutils \  gimp \  git \  gnupg \  gnupg2 \  gstreamer1.0-libav \  gstreamer1.0-plugins-ugly \  gstreamer1.0-vaapi \  htop \  hwinfo \  inkscape \  iputils-ping \  libavcodec-extra \  lsb-release \  mc \  openssh-server \  pavucontrol \  software-properties-common \  tree \  yq Install from contrib apt install \  intel-microcode Install from non-free apt install \  rar \  unrar Remove games apt-get purge \  aisleriot\  atomix\  five-or-more\  four-in-a-row\  gnome-2048\  gnome-chess\  gnome-klotski\  gnome-mahjongg\  gnome-mines\  gnome-nibbles\  gnome-robots\  gnome-sudoku\  gnome-taquin\  gnome-tetravex \  hitori\  iagno\  lightsoff\  quadrapassel\  swell-foop\  tali apt-get autoremove Manually installed Compare the current packages to those that were initially installed.</description>
     </item>
     
   </channel>
