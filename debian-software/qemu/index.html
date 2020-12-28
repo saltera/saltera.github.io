@@ -2,12 +2,11 @@
 <html lang="en">
 
 <head>
-	<meta name="generator" content="Hugo 0.80.0-DEV" />
     <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<meta name="description" content="Home">
+<meta name="description" content="Virtualization">
 
-<title>Home | </title>
+<title>Virtualization | </title>
 
 <link rel="icon" href="/favicon/favicon-32x32.png" type="image/x-icon">
 
@@ -32,7 +31,6 @@
 <link rel="preload" href="/custom.css" as="style">
 <link rel="stylesheet" href="/custom.css" media="all">
 
-<link rel="alternate" type="application/rss+xml" href="https://alexsalter.net/index.xml" title="" />
 <!-- Made with Geekdoc theme https://github.com/thegeeklab/hugo-geekdoc -->
 
 </head>
@@ -446,7 +444,7 @@
             
             
                 <span class="flex">
-                    <a href="/debian-software/qemu/" class="gdoc-nav__entry ">
+                    <a href="/debian-software/qemu/" class="gdoc-nav__entry is-active">
                         Virtualization
                     </a>
                 </span>
@@ -571,7 +569,21 @@
             
     
     
-        Home
+        
+        
+        
+    
+    
+        
+        
+        
+    
+    
+        <a href='/'>Home</a> / <a href='/debian-software/'>Debian software</a> / Virtualization
+    
+
+    
+
     
 
         </span>
@@ -582,8 +594,9 @@
     </span>
 </div>
 
+
     <article class="gdoc-markdown">
-        <h1>Home</h1>
+        <h1>Virtualization</h1>
         
 
 
@@ -591,7 +604,52 @@
     
 
 
-<p>Welcome to alexsalter.net&hellip; are you lost?</p>
+<div class="gdoc-page__anchorwrap"><h2 id="bridge-configuration">Bridge configuration<a data-clipboard-text="https://alexsalter.net/debian-software/qemu/#bridge-configuration" class="gdoc-page__anchor gdoc-page__anchor--right clip" aria-label="Anchor Bridge configuration" href="#bridge-configuration"><svg class="icon link"><use xlink:href="#link"></use></svg></a></h2></div>
+<p><code>/etc/networking/interfaces</code></p>
+<pre><code># This file describes the network interfaces available on your system
+# and how to activate them. For more information, see interfaces(5).
+
+source /etc/network/interfaces.d/*
+
+# The loopback network interface
+auto lo br0
+iface lo inet loopback
+
+iface enp0s31f6 inet manual
+
+iface br0 inet static 
+  bridge_ports enp0s31f6 
+    address 10.0.10.100
+    broadcast 10.0.10.255
+    netmask 255.255.255.0
+    gateway 10.0.10.254
+    bridge_stp off          # disable Spanning Tree Protocol
+    bridge_waitport 0       # no delay before a port becomes available
+    bridge_fd 0             # no forwarding delay
+    bridge_ports none       # if you do not want to bind to any ports
+    bridge_ports regex eth* # use a regular expression to define ports
+
+</code></pre><div class="gdoc-page__anchorwrap"><h2 id="enable-forwarding">Enable forwarding<a data-clipboard-text="https://alexsalter.net/debian-software/qemu/#enable-forwarding" class="gdoc-page__anchor gdoc-page__anchor--right clip" aria-label="Anchor Enable forwarding" href="#enable-forwarding"><svg class="icon link"><use xlink:href="#link"></use></svg></a></h2></div>
+<div class="gdoc-page__anchorwrap"><h2 id="install">Install<a data-clipboard-text="https://alexsalter.net/debian-software/qemu/#install" class="gdoc-page__anchor gdoc-page__anchor--right clip" aria-label="Anchor Install" href="#install"><svg class="icon link"><use xlink:href="#link"></use></svg></a></h2></div>
+<div class="highlight"><pre class="chroma"><code class="language-sh" data-lang="sh">apt install <span class="se">\
+</span><span class="se"></span>    libvirt-daemon <span class="se">\
+</span><span class="se"></span>    qemu-kvm <span class="se">\
+</span><span class="se"></span>    virt-manager
+</code></pre></div><div class="gdoc-page__anchorwrap"><h2 id="reference">Reference<a data-clipboard-text="https://alexsalter.net/debian-software/qemu/#reference" class="gdoc-page__anchor gdoc-page__anchor--right clip" aria-label="Anchor Reference" href="#reference"><svg class="icon link"><use xlink:href="#link"></use></svg></a></h2></div>
+<table>
+<thead>
+<tr>
+<th>Name</th>
+<th>Link</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Installation</td>
+<td></td>
+</tr>
+</tbody>
+</table>
 
 
     </article>

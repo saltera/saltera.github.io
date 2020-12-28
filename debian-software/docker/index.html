@@ -2,12 +2,11 @@
 <html lang="en">
 
 <head>
-	<meta name="generator" content="Hugo 0.80.0-DEV" />
     <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<meta name="description" content="Home">
+<meta name="description" content="Docker">
 
-<title>Home | </title>
+<title>Docker | </title>
 
 <link rel="icon" href="/favicon/favicon-32x32.png" type="image/x-icon">
 
@@ -32,7 +31,6 @@
 <link rel="preload" href="/custom.css" as="style">
 <link rel="stylesheet" href="/custom.css" media="all">
 
-<link rel="alternate" type="application/rss+xml" href="https://alexsalter.net/index.xml" title="" />
 <!-- Made with Geekdoc theme https://github.com/thegeeklab/hugo-geekdoc -->
 
 </head>
@@ -216,7 +214,7 @@
             
             
                 <span class="flex">
-                    <a href="/debian-software/docker/" class="gdoc-nav__entry ">
+                    <a href="/debian-software/docker/" class="gdoc-nav__entry is-active">
                         Docker
                     </a>
                 </span>
@@ -571,7 +569,21 @@
             
     
     
-        Home
+        
+        
+        
+    
+    
+        
+        
+        
+    
+    
+        <a href='/'>Home</a> / <a href='/debian-software/'>Debian software</a> / Docker
+    
+
+    
+
     
 
         </span>
@@ -582,8 +594,9 @@
     </span>
 </div>
 
+
     <article class="gdoc-markdown">
-        <h1>Home</h1>
+        <h1>Docker</h1>
         
 
 
@@ -591,7 +604,35 @@
     
 
 
-<p>Welcome to alexsalter.net&hellip; are you lost?</p>
+<div class="gdoc-page__anchorwrap"><h2 id="install">Install<a data-clipboard-text="https://alexsalter.net/debian-software/docker/#install" class="gdoc-page__anchor gdoc-page__anchor--right clip" aria-label="Anchor Install" href="#install"><svg class="icon link"><use xlink:href="#link"></use></svg></a></h2></div>
+<div class="highlight"><pre class="chroma"><code class="language-sh" data-lang="sh">curl -fsSL https://download.docker.com/linux/debian/gpg <span class="se">\
+</span><span class="se"></span>  <span class="p">|</span> apt-key add -
+
+add-apt-repository <span class="s2">&#34;deb [arch=amd64] https://download.docker.com/linux/debian </span><span class="k">$(</span>lsb_release -cs<span class="k">)</span><span class="s2"> stable&#34;</span>
+
+apt update
+
+apt install docker-ce
+
+usermod -aG docker <span class="si">${</span><span class="nv">USER</span><span class="si">}</span>
+su - <span class="si">${</span><span class="nv">USER</span><span class="si">}</span>
+</code></pre></div><p>Disable <code>zfs</code> plugin in <code>/etc/containerd/config.toml</code></p>
+<pre><code>disabled_plugins = [&quot;cri&quot;, &quot;zfs&quot;]
+</code></pre><div class="gdoc-page__anchorwrap"><h2 id="reference">Reference<a data-clipboard-text="https://alexsalter.net/debian-software/docker/#reference" class="gdoc-page__anchor gdoc-page__anchor--right clip" aria-label="Anchor Reference" href="#reference"><svg class="icon link"><use xlink:href="#link"></use></svg></a></h2></div>
+<table>
+<thead>
+<tr>
+<th>Name</th>
+<th>Link</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Installation</td>
+<td><a href="https://docs.docker.com/engine/install/debian/">https://docs.docker.com/engine/install/debian/</a></td>
+</tr>
+</tbody>
+</table>
 
 
     </article>

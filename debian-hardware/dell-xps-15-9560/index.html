@@ -2,12 +2,11 @@
 <html lang="en">
 
 <head>
-	<meta name="generator" content="Hugo 0.80.0-DEV" />
     <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<meta name="description" content="Home">
+<meta name="description" content="Dell XPS 15 9560">
 
-<title>Home | </title>
+<title>Dell XPS 15 9560 | </title>
 
 <link rel="icon" href="/favicon/favicon-32x32.png" type="image/x-icon">
 
@@ -32,7 +31,6 @@
 <link rel="preload" href="/custom.css" as="style">
 <link rel="stylesheet" href="/custom.css" media="all">
 
-<link rel="alternate" type="application/rss+xml" href="https://alexsalter.net/index.xml" title="" />
 <!-- Made with Geekdoc theme https://github.com/thegeeklab/hugo-geekdoc -->
 
 </head>
@@ -141,7 +139,7 @@
             
             
                 <span class="flex">
-                    <a href="/debian-hardware/dell-xps-15-9560/" class="gdoc-nav__entry ">
+                    <a href="/debian-hardware/dell-xps-15-9560/" class="gdoc-nav__entry is-active">
                         Dell XPS 15 9560
                     </a>
                 </span>
@@ -571,7 +569,21 @@
             
     
     
-        Home
+        
+        
+        
+    
+    
+        
+        
+        
+    
+    
+        <a href='/'>Home</a> / <a href='/debian-hardware/'>Debian hardware</a> / Dell XPS 15 9560
+    
+
+    
+
     
 
         </span>
@@ -582,8 +594,9 @@
     </span>
 </div>
 
+
     <article class="gdoc-markdown">
-        <h1>Home</h1>
+        <h1>Dell XPS 15 9560</h1>
         
 
 
@@ -591,7 +604,34 @@
     
 
 
-<p>Welcome to alexsalter.net&hellip; are you lost?</p>
+<div class="gdoc-page__anchorwrap"><h2 id="installer-missing-non-free-wifi-firmware">Installer missing non-free wifi firmware<a data-clipboard-text="https://alexsalter.net/debian-hardware/dell-xps-15-9560/#installer-missing-non-free-wifi-firmware" class="gdoc-page__anchor gdoc-page__anchor--right clip" aria-label="Anchor Installer missing non-free wifi firmware" href="#installer-missing-non-free-wifi-firmware"><svg class="icon link"><use xlink:href="#link"></use></svg></a></h2></div>
+<p>The Intel 8265/8275 requires non-free firmware whoever this can be added to the installation media.</p>
+<p>Copy the non-free <code>firmware-iwlwifi_*_all.deb</code> from <a href="https://cdimage.debian.org/cdimage/unofficial/non-free/firmware/">https://cdimage.debian.org/cdimage/unofficial/non-free/firmware/</a> to <code>firmware</code> folder of the installation media.</p>
+<div class="gdoc-page__anchorwrap"><h2 id="acpi-issue">ACPI issue<a data-clipboard-text="https://alexsalter.net/debian-hardware/dell-xps-15-9560/#acpi-issue" class="gdoc-page__anchor gdoc-page__anchor--right clip" aria-label="Anchor ACPI issue" href="#acpi-issue"><svg class="icon link"><use xlink:href="#link"></use></svg></a></h2></div>
+<p>There is currently a bug that means that some kernels (particularly newer ones) will detect the wrong ACPI revision.</p>
+<p>Add <code>acpi_rev_override=5</code> to <code>/etc/default/grub</code></p>
+<div class="highlight"><pre class="chroma"><code class="language-ini" data-lang="ini"><span class="na">GRUB_CMDLINE_LINUX</span><span class="o">=</span><span class="s">&#34;acpi_rev_override=5 quiet&#34;</span>
+</code></pre></div><p>Update grub</p>
+<div class="highlight"><pre class="chroma"><code class="language-sh" data-lang="sh">update-grub
+</code></pre></div><div class="gdoc-page__anchorwrap"><h2 id="reference">Reference<a data-clipboard-text="https://alexsalter.net/debian-hardware/dell-xps-15-9560/#reference" class="gdoc-page__anchor gdoc-page__anchor--right clip" aria-label="Anchor Reference" href="#reference"><svg class="icon link"><use xlink:href="#link"></use></svg></a></h2></div>
+<table>
+<thead>
+<tr>
+<th>Name</th>
+<th>Link</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Debian XPS 15 9560</td>
+<td><a href="https://wiki.debian.org/InstallingDebianOn/Dell/Dell_XPS_15_9560">https://wiki.debian.org/InstallingDebianOn/Dell/Dell_XPS_15_9560</a></td>
+</tr>
+<tr>
+<td>Non-free firmware</td>
+<td><a href="https://cdimage.debian.org/cdimage/unofficial/non-free/firmware/">https://cdimage.debian.org/cdimage/unofficial/non-free/firmware/</a></td>
+</tr>
+</tbody>
+</table>
 
 
     </article>

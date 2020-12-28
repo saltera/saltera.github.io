@@ -1,12 +1,12 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>Home on </title>
-    <link>https://alexsalter.net/</link>
-    <description>Recent content in Home on </description>
+    <title>Debian software on </title>
+    <link>https://alexsalter.net/debian-software/</link>
+    <description>Recent content in Debian software on </description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-gb</language>
-    <lastBuildDate>Fri, 25 Dec 2020 21:21:23 +0000</lastBuildDate><atom:link href="https://alexsalter.net/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Mon, 28 Dec 2020 12:35:24 +0000</lastBuildDate><atom:link href="https://alexsalter.net/debian-software/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Azure Cli</title>
       <link>https://alexsalter.net/debian-software/azure-cli/</link>
@@ -141,37 +141,12 @@ apt update apt install gnome-shell-extensions Activate packages on https://exten
     </item>
     
     <item>
-      <title>Audioengine HD3</title>
-      <link>https://alexsalter.net/debian-hardware/audioengine-hd3/</link>
-      <pubDate>Fri, 25 Dec 2020 23:20:03 +0000</pubDate>
-      
-      <guid>https://alexsalter.net/debian-hardware/audioengine-hd3/</guid>
-      <description>Default sample rate unsupported The Audioengine HD3 speakers do not appear to support a sample rate of 44.1kHz which is the default.
-We therefore need change the sample rate to 48kHz and restart pulseaudio.
-sed \  -i &amp;#39;s/; default-sample-rate = 44100/default-sample-rate = 48000/g&amp;#39; \  /etc/pulse/daemon.conf pulseaudio -k </description>
-    </item>
-    
-    <item>
       <title>Packages</title>
       <link>https://alexsalter.net/debian-software/general/</link>
       <pubDate>Fri, 25 Dec 2020 22:44:12 +0000</pubDate>
       
       <guid>https://alexsalter.net/debian-software/general/</guid>
       <description>Install from main apt update apt install \  apt-transport-https \  backintime-common \  bridge-utils \  ca-certificates \  curl \  dnsutils \  gimp \  git \  gnupg \  gnupg2 \  gstreamer1.0-libav \  gstreamer1.0-plugins-ugly \  gstreamer1.0-vaapi \  htop \  hwinfo \  inkscape \  libavcodec-extra \  lsb-release \  mc \  openssh-server \  pavucontrol \  software-properties-common \  tasksh \  taskwarrior \  tree \  yq Install from contrib apt install \  intel-microcode Install from non-free apt install \  rar \  unrar Remove games apt-get purge \  aisleriot\  atomix\  five-or-more\  four-in-a-row\  gnome-2048\  gnome-chess\  gnome-klotski\  gnome-mahjongg\  gnome-mines\  gnome-nibbles\  gnome-robots\  gnome-sudoku\  gnome-taquin\  gnome-tetravex \  hitori\  iagno\  lightsoff\  quadrapassel\  swell-foop\  tali apt-get autoremove Manually installed Compare the current packages to those that were initially installed.</description>
-    </item>
-    
-    <item>
-      <title>Dell XPS 15 9560</title>
-      <link>https://alexsalter.net/debian-hardware/dell-xps-15-9560/</link>
-      <pubDate>Fri, 25 Dec 2020 19:34:37 +0000</pubDate>
-      
-      <guid>https://alexsalter.net/debian-hardware/dell-xps-15-9560/</guid>
-      <description>Installer missing non-free wifi firmware The Intel 8265/8275 requires non-free firmware whoever this can be added to the installation media.
-Copy the non-free firmware-iwlwifi_*_all.deb from https://cdimage.debian.org/cdimage/unofficial/non-free/firmware/ to firmware folder of the installation media.
-ACPI issue There is currently a bug that means that some kernels (particularly newer ones) will detect the wrong ACPI revision.
-Add acpi_rev_override=5 to /etc/default/grub
-GRUB_CMDLINE_LINUX=&amp;#34;acpi_rev_override=5 quiet&amp;#34; Update grub
-update-grub Reference    Name Link     Debian XPS 15 9560 https://wiki.</description>
     </item>
     
   </channel>

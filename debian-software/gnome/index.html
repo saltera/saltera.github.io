@@ -2,12 +2,11 @@
 <html lang="en">
 
 <head>
-	<meta name="generator" content="Hugo 0.80.0-DEV" />
     <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<meta name="description" content="Home">
+<meta name="description" content="Gnome">
 
-<title>Home | </title>
+<title>Gnome | </title>
 
 <link rel="icon" href="/favicon/favicon-32x32.png" type="image/x-icon">
 
@@ -32,7 +31,6 @@
 <link rel="preload" href="/custom.css" as="style">
 <link rel="stylesheet" href="/custom.css" media="all">
 
-<link rel="alternate" type="application/rss+xml" href="https://alexsalter.net/index.xml" title="" />
 <!-- Made with Geekdoc theme https://github.com/thegeeklab/hugo-geekdoc -->
 
 </head>
@@ -262,7 +260,7 @@
             
             
                 <span class="flex">
-                    <a href="/debian-software/gnome/" class="gdoc-nav__entry ">
+                    <a href="/debian-software/gnome/" class="gdoc-nav__entry is-active">
                         Gnome
                     </a>
                 </span>
@@ -571,7 +569,21 @@
             
     
     
-        Home
+        
+        
+        
+    
+    
+        
+        
+        
+    
+    
+        <a href='/'>Home</a> / <a href='/debian-software/'>Debian software</a> / Gnome
+    
+
+    
+
     
 
         </span>
@@ -582,8 +594,9 @@
     </span>
 </div>
 
+
     <article class="gdoc-markdown">
-        <h1>Home</h1>
+        <h1>Gnome</h1>
         
 
 
@@ -591,7 +604,36 @@
     
 
 
-<p>Welcome to alexsalter.net&hellip; are you lost?</p>
+<div class="gdoc-page__anchorwrap"><h2 id="appearance">Appearance<a data-clipboard-text="https://alexsalter.net/debian-software/gnome/#appearance" class="gdoc-page__anchor gdoc-page__anchor--right clip" aria-label="Anchor Appearance" href="#appearance"><svg class="icon link"><use xlink:href="#link"></use></svg></a></h2></div>
+<p>Change the theme to Adwaita-dark</p>
+<div class="highlight"><pre class="chroma"><code class="language-sh" data-lang="sh">gsettings <span class="nb">set</span> org.gnome.desktop.interface gtk-theme <span class="s2">&#34;Adwaita-dark&#34;</span>
+</code></pre></div><div class="gdoc-page__anchorwrap"><h2 id="install-shell-extensions">Install Shell Extensions<a data-clipboard-text="https://alexsalter.net/debian-software/gnome/#install-shell-extensions" class="gdoc-page__anchor gdoc-page__anchor--right clip" aria-label="Anchor Install Shell Extensions" href="#install-shell-extensions"><svg class="icon link"><use xlink:href="#link"></use></svg></a></h2></div>
+<p>Install the <code>gnome-shell-extensions</code> package.</p>
+<div class="highlight"><pre class="chroma"><code class="language-sh" data-lang="sh">apt update
+
+apt install gnome-shell-extensions
+</code></pre></div><p>Activate packages on <a href="https://extensions.gnome.org">https://extensions.gnome.org</a></p>
+<ul>
+<li><a href="https://extensions.gnome.org/extension/118/no-topleft-hot-corner/">No top left hot corner</a></li>
+<li><a href="https://extensions.gnome.org/extension/906/sound-output-device-chooser/">Sound output device chooser</a></li>
+<li><a href="https://extensions.gnome.org/extension/570/todotxt/">Todo txt</a></li>
+</ul>
+<div class="gdoc-page__anchorwrap"><h2 id="additional-shortcuts">Additional Shortcuts<a data-clipboard-text="https://alexsalter.net/debian-software/gnome/#additional-shortcuts" class="gdoc-page__anchor gdoc-page__anchor--right clip" aria-label="Anchor Additional Shortcuts" href="#additional-shortcuts"><svg class="icon link"><use xlink:href="#link"></use></svg></a></h2></div>
+<h1 id="navigation">Navigation</h1>
+<table>
+<thead>
+<tr>
+<th>Action</th>
+<th>Key</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Hide all normal windows</td>
+<td><code>Super</code> + <code>D</code></td>
+</tr>
+</tbody>
+</table>
 
 
     </article>

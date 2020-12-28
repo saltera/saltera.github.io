@@ -2,12 +2,11 @@
 <html lang="en">
 
 <head>
-	<meta name="generator" content="Hugo 0.80.0-DEV" />
     <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<meta name="description" content="Home">
+<meta name="description" content="Audioengine HD3">
 
-<title>Home | </title>
+<title>Audioengine HD3 | </title>
 
 <link rel="icon" href="/favicon/favicon-32x32.png" type="image/x-icon">
 
@@ -32,7 +31,6 @@
 <link rel="preload" href="/custom.css" as="style">
 <link rel="stylesheet" href="/custom.css" media="all">
 
-<link rel="alternate" type="application/rss+xml" href="https://alexsalter.net/index.xml" title="" />
 <!-- Made with Geekdoc theme https://github.com/thegeeklab/hugo-geekdoc -->
 
 </head>
@@ -118,7 +116,7 @@
             
             
                 <span class="flex">
-                    <a href="/debian-hardware/audioengine-hd3/" class="gdoc-nav__entry ">
+                    <a href="/debian-hardware/audioengine-hd3/" class="gdoc-nav__entry is-active">
                         Audioengine HD3
                     </a>
                 </span>
@@ -571,7 +569,21 @@
             
     
     
-        Home
+        
+        
+        
+    
+    
+        
+        
+        
+    
+    
+        <a href='/'>Home</a> / <a href='/debian-hardware/'>Debian hardware</a> / Audioengine HD3
+    
+
+    
+
     
 
         </span>
@@ -582,8 +594,9 @@
     </span>
 </div>
 
+
     <article class="gdoc-markdown">
-        <h1>Home</h1>
+        <h1>Audioengine HD3</h1>
         
 
 
@@ -591,8 +604,15 @@
     
 
 
-<p>Welcome to alexsalter.net&hellip; are you lost?</p>
+<div class="gdoc-page__anchorwrap"><h2 id="default-sample-rate-unsupported">Default sample rate unsupported<a data-clipboard-text="https://alexsalter.net/debian-hardware/audioengine-hd3/#default-sample-rate-unsupported" class="gdoc-page__anchor gdoc-page__anchor--right clip" aria-label="Anchor Default sample rate unsupported" href="#default-sample-rate-unsupported"><svg class="icon link"><use xlink:href="#link"></use></svg></a></h2></div>
+<p>The Audioengine HD3 speakers do not appear to support a sample rate of 44.1kHz which is the default.</p>
+<p>We therefore need change the sample rate to 48kHz and  restart pulseaudio.</p>
+<div class="highlight"><pre class="chroma"><code class="language-sh" data-lang="sh">sed <span class="se">\
+</span><span class="se"></span>  -i <span class="s1">&#39;s/; default-sample-rate = 44100/default-sample-rate = 48000/g&#39;</span> <span class="se">\
+</span><span class="se"></span>  /etc/pulse/daemon.conf
 
+pulseaudio -k
+</code></pre></div>
 
     </article>
 
