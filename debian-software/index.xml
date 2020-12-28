@@ -5,8 +5,7 @@
     <link>https://alexsalter.net/debian-software/</link>
     <description>Recent content in Debian software on </description>
     <generator>Hugo -- gohugo.io</generator>
-    <language>en-gb</language>
-    <lastBuildDate>Mon, 28 Dec 2020 12:35:24 +0000</lastBuildDate><atom:link href="https://alexsalter.net/debian-software/index.xml" rel="self" type="application/rss+xml" />
+    <language>en-gb</language><atom:link href="https://alexsalter.net/debian-software/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Azure Cli</title>
       <link>https://alexsalter.net/debian-software/azure-cli/</link>
