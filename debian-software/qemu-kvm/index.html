@@ -4,9 +4,9 @@
 <head>
     <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<meta name="description" content="GitHub">
+<meta name="description" content="QEMU/KVM">
 
-<title>GitHub | </title>
+<title>QEMU/KVM | </title>
 
 <link rel="icon" href="/favicon/favicon-32x32.png" type="image/x-icon">
 
@@ -237,7 +237,7 @@
             
             
                 <span class="flex">
-                    <a href="/debian-software/github/" class="gdoc-nav__entry is-active">
+                    <a href="/debian-software/github/" class="gdoc-nav__entry ">
                         GitHub
                     </a>
                 </span>
@@ -421,7 +421,7 @@
             
             
                 <span class="flex">
-                    <a href="/debian-software/qemu-kvm/" class="gdoc-nav__entry ">
+                    <a href="/debian-software/qemu-kvm/" class="gdoc-nav__entry is-active">
                         QEMU/KVM
                     </a>
                 </span>
@@ -579,7 +579,7 @@
         
     
     
-        <a href='/'>Home</a> / <a href='/debian-software/'>Debian software</a> / GitHub
+        <a href='/'>Home</a> / <a href='/debian-software/'>Debian software</a> / QEMU/KVM
     
 
     
@@ -596,7 +596,7 @@
 
 
     <article class="gdoc-markdown">
-        <h1>GitHub</h1>
+        <h1>QEMU/KVM</h1>
         
 
 
@@ -604,15 +604,99 @@
     
 
 
-<div class="gdoc-page__anchorwrap"><h2 id="install">Install<a data-clipboard-text="https://alexsalter.net/debian-software/github/#install" class="gdoc-page__anchor gdoc-page__anchor--right clip" aria-label="Anchor Install" href="#install"><svg class="icon link"><use xlink:href="#link"></use></svg></a></h2></div>
-<div class="highlight"><pre class="chroma"><code class="language-sh" data-lang="sh">apt-key adv --keyserver keyserver.ubuntu.com --recv-key C99B11DEB97541F0
+<p>This approach doesn&rsquo;t currently support wireless adapters.</p>
+<div class="gdoc-page__anchorwrap"><h2 id="install">Install<a data-clipboard-text="https://alexsalter.net/debian-software/qemu-kvm/#install" class="gdoc-page__anchor gdoc-page__anchor--right clip" aria-label="Anchor Install" href="#install"><svg class="icon link"><use xlink:href="#link"></use></svg></a></h2></div>
+<div class="highlight"><pre class="chroma"><code class="language-sh" data-lang="sh">apt install <span class="se">\
+</span><span class="se"></span>    libvirt-daemon <span class="se">\
+</span><span class="se"></span>    qemu-kvm <span class="se">\
+</span><span class="se"></span>    virt-manager
+</code></pre></div><div class="gdoc-page__anchorwrap"><h2 id="bridge-configuration">Bridge configuration<a data-clipboard-text="https://alexsalter.net/debian-software/qemu-kvm/#bridge-configuration" class="gdoc-page__anchor gdoc-page__anchor--right clip" aria-label="Anchor Bridge configuration" href="#bridge-configuration"><svg class="icon link"><use xlink:href="#link"></use></svg></a></h2></div>
+<p>In order for the VM&rsquo;s to be accessible on the network we will create bridge using the primary nic.</p>
+<p>This is achieved by setting the nic to manual and creating a bridge and add the nic as a port.
+<code>/etc/networking/interfaces</code></p>
+<pre><code># This file describes the network interfaces available on your system
+# and how to activate them. For more information, see interfaces(5).
 
-apt-add-repository https://cli.github.com/packages
+source /etc/network/interfaces.d/*
 
-apt update
+# The loopback network interface
+auto lo br0
+iface lo inet loopback
 
-apt install gh
-</code></pre></div><div class="gdoc-page__anchorwrap"><h2 id="reference">Reference<a data-clipboard-text="https://alexsalter.net/debian-software/github/#reference" class="gdoc-page__anchor gdoc-page__anchor--right clip" aria-label="Anchor Reference" href="#reference"><svg class="icon link"><use xlink:href="#link"></use></svg></a></h2></div>
+iface enp0s31f6 inet manual
+
+iface br0 inet static 
+  bridge_ports enp0s31f6 
+    address 10.0.10.100
+    broadcast 10.0.10.255
+    netmask 255.255.255.0
+    gateway 10.0.10.254
+    bridge_stp off          # disable Spanning Tree Protocol
+    bridge_waitport 0       # no delay before a port becomes available
+    bridge_fd 0             # no forwarding delay
+    bridge_ports none       # if you do not want to bind to any ports
+    bridge_ports regex eth* # use a regular expression to define ports
+</code></pre><div class="gdoc-page__anchorwrap"><h2 id="configure-nft">Configure nft<a data-clipboard-text="https://alexsalter.net/debian-software/qemu-kvm/#configure-nft" class="gdoc-page__anchor gdoc-page__anchor--right clip" aria-label="Anchor Configure nft" href="#configure-nft"><svg class="icon link"><use xlink:href="#link"></use></svg></a></h2></div>
+<p><code>/etc/nftables.conf</code></p>
+<pre><code>table ip filter {
+  chain INPUT {
+    type filter hook input priority 0; policy drop;
+
+    # established/related connections
+    ct state established,related accept
+
+    # loopback interface
+    iifname lo accept
+
+    # icmp
+    icmp type echo-request accept
+
+    # open tcp ports: sshd (22)
+    tcp dport ssh accept
+  }
+
+  chain FORWARD {
+    type filter hook forward priority 0; policy drop;
+  }
+
+  chain OUTPUT {
+    type filter hook output priority 0; policy accept;
+  }
+}
+
+table ip6 filter {
+  chain INPUT {
+    type filter hook input priority 0; policy drop;
+
+    # established/related connections
+    ct state established,related accept
+
+    # loopback interface
+    iifname lo accept
+
+    # icmp
+    icmp type echo-request accept
+
+    # open tcp ports: sshd (22)
+    tcp dport ssh accept
+  }
+
+  chain FORWARD {
+    type filter hook forward priority 0; policy drop;
+  }
+
+  chain OUTPUT {
+    type filter hook output priority 0; policy accept;
+  }
+}
+</code></pre><p>In order to be compatible with Docker and it&rsquo;s use of iptables-nft:-</p>
+<ul>
+<li>Name the tables <code>INPUT</code>, <code>FORWARD</code> and <code>OUTPUT</code> to match iptables</li>
+<li>Do not use <code>inet</code> instead use <code>ip</code> and <code>ip6</code></li>
+</ul>
+<div class="gdoc-page__anchorwrap"><h2 id="enable-ip-forwarding">Enable IP forwarding<a data-clipboard-text="https://alexsalter.net/debian-software/qemu-kvm/#enable-ip-forwarding" class="gdoc-page__anchor gdoc-page__anchor--right clip" aria-label="Anchor Enable IP forwarding" href="#enable-ip-forwarding"><svg class="icon link"><use xlink:href="#link"></use></svg></a></h2></div>
+<div class="highlight"><pre class="chroma"><code class="language-sh" data-lang="sh">sysctl -w net.ipv4.ip_forward<span class="o">=</span><span class="m">1</span>
+</code></pre></div><div class="gdoc-page__anchorwrap"><h2 id="reference">Reference<a data-clipboard-text="https://alexsalter.net/debian-software/qemu-kvm/#reference" class="gdoc-page__anchor gdoc-page__anchor--right clip" aria-label="Anchor Reference" href="#reference"><svg class="icon link"><use xlink:href="#link"></use></svg></a></h2></div>
 <table>
 <thead>
 <tr>
@@ -623,7 +707,19 @@ apt install gh
 <tbody>
 <tr>
 <td>Installation</td>
-<td><a href="https://github.com/cli/cli/blob/trunk/docs/install_linux.md#debian-ubuntu-linux-apt">https://github.com/cli/cli/blob/trunk/docs/install_linux.md#debian-ubuntu-linux-apt</a></td>
+<td></td>
+</tr>
+<tr>
+<td>Debian KVM</td>
+<td><a href="https://wiki.debian.org/KVM">https://wiki.debian.org/KVM</a></td>
+</tr>
+<tr>
+<td>Debian QEMU</td>
+<td><a href="https://wiki.debian.org/QEMU">https://wiki.debian.org/QEMU</a></td>
+</tr>
+<tr>
+<td>Debian System Virtualization</td>
+<td><a href="https://wiki.debian.org/SystemVirtualization">https://wiki.debian.org/SystemVirtualization</a></td>
 </tr>
 </tbody>
 </table>

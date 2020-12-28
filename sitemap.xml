@@ -8,6 +8,11 @@
   </url>
   
   <url>
+    <loc>https://alexsalter.net/legal-notice/</loc>
+    <lastmod>2020-12-28T14:43:31+00:00</lastmod>
+  </url>
+  
+  <url>
     <loc>https://alexsalter.net/debian-software/azure-cli/</loc>
     <lastmod>2020-12-28T12:35:24+00:00</lastmod>
   </url>
@@ -58,7 +63,7 @@
   </url>
   
   <url>
-    <loc>https://alexsalter.net/debian-software/qemu/</loc>
+    <loc>https://alexsalter.net/debian-software/qemu-kvm/</loc>
     <lastmod>2020-12-26T22:05:20+00:00</lastmod>
   </url>
   
